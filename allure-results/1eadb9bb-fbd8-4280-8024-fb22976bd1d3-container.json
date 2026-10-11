@@ -1,0 +1,1 @@
+{"uuid":"1eadb9bb-fbd8-4280-8024-fb22976bd1d3","name":"Default suite","children":["527663a6-2839-41a1-90bf-ba0fcfbaf820"],"befores":[{"name":"loadConfig","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1791630783908,"stop":1791630783915}],"afters":[],"start":1791630783865,"stop":1791630798301}

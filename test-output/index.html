@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-SupportHubSuite" class="navigator-link">
+              <span class="suite-name border-failed">SupportHubSuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-SupportHubSuite" class="navigator-link ">
+                    <span>testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-SupportHubSuite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-SupportHubSuite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-SupportHubSuite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-SupportHubSuite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-SupportHubSuite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-SupportHubSuite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">15 methods, 2 failed,   13 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SupportHubSuite" class="hide-methods failed suite-SupportHubSuite"> (hide)</a> <!-- hide-methods failed suite-SupportHubSuite -->
+                      <a href="#" panel-name="suite-SupportHubSuite" class="show-methods failed suite-SupportHubSuite"> (show)</a> <!-- show-methods failed suite-SupportHubSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-SupportHubSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testApplyQuickFilterAndToggleClose">testApplyQuickFilterAndToggleClose</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testCreateAndSaveCustomFilterViewShortcut">testCreateAndSaveCustomFilterViewShortcut</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SupportHubSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-SupportHubSuite" class="hide-methods passed suite-SupportHubSuite"> (hide)</a> <!-- hide-methods passed suite-SupportHubSuite -->
+                      <a href="#" panel-name="suite-SupportHubSuite" class="show-methods passed suite-SupportHubSuite"> (show)</a> <!-- show-methods passed suite-SupportHubSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-SupportHubSuite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateCustomerTest" class="method navigator-link" hash-for-method="testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)">testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ReminderTest" class="method navigator-link" hash-for-method="testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)">testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateCustomerTest" class="method navigator-link" hash-for-method="testCreateNewCustomer(Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Ma...)">testCreateNewCustomer(Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Ma...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateTicketTest" class="method navigator-link" hash-for-method="testCreateTicketValidationOnMissingFields">testCreateTicketValidationOnMissingFields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateTicketTest" class="method navigator-link" hash-for-method="testCreateTicketWithValidCustomer">testCreateTicketWithValidCustomer</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateCustomerTest" class="method navigator-link" hash-for-method="testCustomerDeduplicationViaCSV">testCustomerDeduplicationViaCSV</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.PerformanceTest" class="method navigator-link" hash-for-method="testExportExcelReportGeneration(Chat support, This Month)">testExportExcelReportGeneration(Chat support, This Month)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateCustomerTest" class="method navigator-link" hash-for-method="testImportCustomersCSV">testImportCustomersCSV</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.PerformanceTest" class="method navigator-link" hash-for-method="testSearchAgentInPerformanceGrid(Harshik, Harshik Titirmare)">testSearchAgentInPerformanceGrid(Harshik, Harshik Titirmare)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.PerformanceTest" class="method navigator-link" hash-for-method="testSearchNonExistingAgentInPerformanceGrid(XYZTest)">testSearchNonExistingAgentInPerformanceGrid(XYZTest)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testSearchTicketById">testSearchTicketById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testSearchWithNonMatchingFilterCriteria">testSearchWithNonMatchingFilterCriteria</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ReminderTest" class="method navigator-link" hash-for-method="testSetTicketReminder">testSetTicketReminder</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-SupportHubSuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-SupportHubSuite" class="panel SupportHubSuite">
+          <div class="suite-SupportHubSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.supporthub.test.ApplyFilterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testApplyQuickFilterAndToggleClose">
+                  </a> <!-- testApplyQuickFilterAndToggleClose -->
+                  <span class="method-name">testApplyQuickFilterAndToggleClose</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),&apos;Urgent&apos;)]
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;7.0.0-38-generic&apos;, java.version: &apos;17.0.20.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725137748}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46881}, goog:processID: 27994, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46881/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3da45653de8f563ed32ef9991d5bb604
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.supporthub.pages.TicketPage.selectFilterPriority(TicketPage.java:96)
+	at com.supporthub.test.ApplyFilterTest.testApplyQuickFilterAndToggleClose(ApplyFilterTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateAndSaveCustomFilterViewShortcut">
+                  </a> <!-- testCreateAndSaveCustomFilterViewShortcut -->
+                  <span class="method-name">testCreateAndSaveCustomFilterViewShortcut</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),&apos;Urgent&apos;)]
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
+System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;7.0.0-38-generic&apos;, java.version: &apos;17.0.20.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725158001}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40503}, goog:processID: 28353, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40503/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 39a4fbbe476deaa626a0d5c6410b3075
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.supporthub.pages.TicketPage.selectFilterPriority(TicketPage.java:96)
+	at com.supporthub.test.ApplyFilterTest.testCreateAndSaveCustomFilterViewShortcut(ApplyFilterTest.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SupportHubSuite-class-failed -->
+          <div class="suite-SupportHubSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.supporthub.test.ReminderTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)">
+                  </a> <!-- testBlankReminderNoteValidation(, 10-18-2026, 07:50PM) -->
+                  <span class="method-name">testBlankReminderNoteValidation</span>
+                  <span class="parameters">(,10-18-2026,07:50PM)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSetTicketReminder">
+                  </a> <!-- testSetTicketReminder -->
+                  <span class="method-name">testSetTicketReminder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SupportHubSuite-class-passed -->
+          <div class="suite-SupportHubSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.supporthub.test.CreateCustomerTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)">
+                  </a> <!-- testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...) -->
+                  <span class="method-name">testBlankMandatoryNameValidation</span>
+                  <span class="parameters">(,9876543210,blank.name@example.com,India,Maharashtra,Social Media,12/15/1995,Male,MG Road,Test Notes,Nagpur,440001,@test)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateNewCustomer(Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Ma...)">
+                  </a> <!-- testCreateNewCustomer(Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Ma...) -->
+                  <span class="method-name">testCreateNewCustomer</span>
+                  <span class="parameters">(Rahul Sharma,9876543210,rahul.sharma@example.com,India,Maharashtra,Social Media,12/15/1995,Male,MG Road,VIP Customer,Nagpur,440001,@rahul_sharma)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCustomerDeduplicationViaCSV">
+                  </a> <!-- testCustomerDeduplicationViaCSV -->
+                  <span class="method-name">testCustomerDeduplicationViaCSV</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testImportCustomersCSV">
+                  </a> <!-- testImportCustomersCSV -->
+                  <span class="method-name">testImportCustomersCSV</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SupportHubSuite-class-passed -->
+          <div class="suite-SupportHubSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.supporthub.test.PerformanceTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testExportExcelReportGeneration(Chat support, This Month)">
+                  </a> <!-- testExportExcelReportGeneration(Chat support, This Month) -->
+                  <span class="method-name">testExportExcelReportGeneration</span>
+                  <span class="parameters">(Chat support,This Month)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchAgentInPerformanceGrid(Harshik, Harshik Titirmare)">
+                  </a> <!-- testSearchAgentInPerformanceGrid(Harshik, Harshik Titirmare) -->
+                  <span class="method-name">testSearchAgentInPerformanceGrid</span>
+                  <span class="parameters">(Harshik,Harshik Titirmare)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchNonExistingAgentInPerformanceGrid(XYZTest)">
+                  </a> <!-- testSearchNonExistingAgentInPerformanceGrid(XYZTest) -->
+                  <span class="method-name">testSearchNonExistingAgentInPerformanceGrid</span>
+                  <span class="parameters">(XYZTest)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SupportHubSuite-class-passed -->
+          <div class="suite-SupportHubSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.supporthub.test.ApplyFilterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchTicketById">
+                  </a> <!-- testSearchTicketById -->
+                  <span class="method-name">testSearchTicketById</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchWithNonMatchingFilterCriteria">
+                  </a> <!-- testSearchWithNonMatchingFilterCriteria -->
+                  <span class="method-name">testSearchWithNonMatchingFilterCriteria</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SupportHubSuite-class-passed -->
+          <div class="suite-SupportHubSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.supporthub.test.CreateTicketTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateTicketValidationOnMissingFields">
+                  </a> <!-- testCreateTicketValidationOnMissingFields -->
+                  <span class="method-name">testCreateTicketValidationOnMissingFields</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateTicketWithValidCustomer">
+                  </a> <!-- testCreateTicketWithValidCustomer -->
+                  <span class="method-name">testCreateTicketWithValidCustomer</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SupportHubSuite-class-passed -->
+        </div> <!-- panel SupportHubSuite -->
+        <div panel-name="test-xml-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/src/test/resources/testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;SupportHubSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.supporthub.listeners.AllureListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;SupportHub Regression Suite&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.supporthub.test.CreateTicketTest&quot;/&gt;
+      &lt;class name=&quot;com.supporthub.test.ApplyFilterTest&quot;/&gt;
+      &lt;class name=&quot;com.supporthub.test.CreateCustomerTest&quot;/&gt;
+      &lt;class name=&quot;com.supporthub.test.ReminderTest&quot;/&gt;
+      &lt;class name=&quot;com.supporthub.test.PerformanceTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- SupportHub Regression Suite --&gt;
+&lt;/suite&gt; &lt;!-- SupportHubSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for SupportHubSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">SupportHub Regression Suite (5 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for SupportHubSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for SupportHubSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_SupportHubSuite');
+function tableData_SupportHubSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(15);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testApplyQuickFilterAndToggleClose')
+data.setCell(0, 2, 'com.supporthub.test.ApplyFilterTest')
+data.setCell(0, 3, 15525);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testCreateAndSaveCustomFilterViewShortcut')
+data.setCell(1, 2, 'com.supporthub.test.ApplyFilterTest')
+data.setCell(1, 3, 14922);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testCreateNewCustomer')
+data.setCell(2, 2, 'com.supporthub.test.CreateCustomerTest')
+data.setCell(2, 3, 10491);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCreateTicketWithValidCustomer')
+data.setCell(3, 2, 'com.supporthub.test.CreateTicketTest')
+data.setCell(3, 3, 10189);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testCreateTicketValidationOnMissingFields')
+data.setCell(4, 2, 'com.supporthub.test.CreateTicketTest')
+data.setCell(4, 3, 8445);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testBlankMandatoryNameValidation')
+data.setCell(5, 2, 'com.supporthub.test.CreateCustomerTest')
+data.setCell(5, 3, 7974);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testSetTicketReminder')
+data.setCell(6, 2, 'com.supporthub.test.ReminderTest')
+data.setCell(6, 3, 5521);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testImportCustomersCSV')
+data.setCell(7, 2, 'com.supporthub.test.CreateCustomerTest')
+data.setCell(7, 3, 4687);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testExportExcelReportGeneration')
+data.setCell(8, 2, 'com.supporthub.test.PerformanceTest')
+data.setCell(8, 3, 4597);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testCustomerDeduplicationViaCSV')
+data.setCell(9, 2, 'com.supporthub.test.CreateCustomerTest')
+data.setCell(9, 3, 4548);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testSearchWithNonMatchingFilterCriteria')
+data.setCell(10, 2, 'com.supporthub.test.ApplyFilterTest')
+data.setCell(10, 3, 4456);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testBlankReminderNoteValidation')
+data.setCell(11, 2, 'com.supporthub.test.ReminderTest')
+data.setCell(11, 3, 4281);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testSearchAgentInPerformanceGrid')
+data.setCell(12, 2, 'com.supporthub.test.PerformanceTest')
+data.setCell(12, 3, 3985);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testSearchTicketById')
+data.setCell(13, 2, 'com.supporthub.test.ApplyFilterTest')
+data.setCell(13, 3, 3967);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testSearchNonExistingAgentInPerformanceGrid')
+data.setCell(14, 2, 'com.supporthub.test.PerformanceTest')
+data.setCell(14, 3, 3894);
+window.suiteTableData['SupportHubSuite']= { tableData: data, tableDiv: 'times-div-SupportHubSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-SupportHubSuite">
+              </div> <!-- times-div-SupportHubSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for SupportHubSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">4 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.supporthub.test.ReminderTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">loadConfig</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.supporthub.test.CreateCustomerTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">loadConfig</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.supporthub.test.PerformanceTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">loadConfig</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.supporthub.test.ApplyFilterTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">loadConfig</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-SupportHubSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.supporthub.test.CreateTicketTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">loadConfig</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">162 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testCreateTicketWithValidCustomer</span>
+                <span class="method-start">5576 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testCreateTicketWithValidCustomer status=SUCCESS method=CreateTicketTest.testCreate...)</span>
+                <span class="method-start">15793 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">16033 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testCreateTicketValidationOnMissingFields</span>
+                <span class="method-start">20067 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testCreateTicketValidationOnMissingFields status=SUCCESS method=CreateTicketTest.te...)</span>
+                <span class="method-start">28531 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.supporthub.test.ApplyFilterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">28769 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testApplyQuickFilterAndToggleClose</span>
+                <span class="method-start">32847 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testApplyQuickFilterAndToggleClose status=FAILURE method=ApplyFilterTest.testApplyQ...)</span>
+                <span class="method-start">48662 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">49023 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testCreateAndSaveCustomFilterViewShortcut</span>
+                <span class="method-start">54140 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testCreateAndSaveCustomFilterViewShortcut status=FAILURE method=ApplyFilterTest.tes...)</span>
+                <span class="method-start">69364 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">69799 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testSearchWithNonMatchingFilterCriteria</span>
+                <span class="method-start">73909 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testSearchWithNonMatchingFilterCriteria status=SUCCESS method=ApplyFilterTest.testS...)</span>
+                <span class="method-start">78369 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">78631 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testSearchTicketById</span>
+                <span class="method-start">83119 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testSearchTicketById status=SUCCESS method=ApplyFilterTest.testSearchTicketById()[p...)</span>
+                <span class="method-start">87093 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.supporthub.test.CreateCustomerTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">87410 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testCreateNewCustomer(Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Ma...)</span>
+                <span class="method-start">91439 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testCreateNewCustomer status=SUCCESS method=CreateCustomerTest.testCreateNewCustome...)</span>
+                <span class="method-start">101937 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">102157 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)</span>
+                <span class="method-start">106414 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testBlankMandatoryNameValidation status=SUCCESS method=CreateCustomerTest.testBlank...)</span>
+                <span class="method-start">114391 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">114657 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testImportCustomersCSV</span>
+                <span class="method-start">119771 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testImportCustomersCSV status=SUCCESS method=CreateCustomerTest.testImportCustomers...)</span>
+                <span class="method-start">124462 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">124765 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testCustomerDeduplicationViaCSV</span>
+                <span class="method-start">128814 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testCustomerDeduplicationViaCSV status=SUCCESS method=CreateCustomerTest.testCustom...)</span>
+                <span class="method-start">133372 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.supporthub.test.ReminderTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">133659 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testSetTicketReminder</span>
+                <span class="method-start">137763 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testSetTicketReminder status=SUCCESS method=ReminderTest.testSetTicketReminder()[pr...)</span>
+                <span class="method-start">143289 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">143549 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)</span>
+                <span class="method-start">147602 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testBlankReminderNoteValidation status=SUCCESS method=ReminderTest.testBlankReminde...)</span>
+                <span class="method-start">151886 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.supporthub.test.PerformanceTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">152104 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testSearchAgentInPerformanceGrid(Harshik, Harshik Titirmare)</span>
+                <span class="method-start">156118 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testSearchAgentInPerformanceGrid status=SUCCESS method=PerformanceTest.testSearchAg...)</span>
+                <span class="method-start">160107 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">160331 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testSearchNonExistingAgentInPerformanceGrid(XYZTest)</span>
+                <span class="method-start">164494 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testSearchNonExistingAgentInPerformanceGrid status=SUCCESS method=PerformanceTest.t...)</span>
+                <span class="method-start">168395 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">168617 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testExportExcelReportGeneration(Chat support, This Month)</span>
+                <span class="method-start">173199 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=testExportExcelReportGeneration status=SUCCESS method=PerformanceTest.testExportExc...)</span>
+                <span class="method-start">177801 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

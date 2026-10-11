@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SupportHubSuite" parallel="false">
+	<listeners>
+		<listener class-name="com.supporthub.listeners.AllureListener" />
+	</listeners>
+
+	<test name="SupportHub Regression Suite">
+		<classes>
+			<class name="com.supporthub.test.CreateTicketTest" />
+			<class name="com.supporthub.test.ApplyFilterTest" />
+			<class name="com.supporthub.test.CreateCustomerTest" />
+			<class name="com.supporthub.test.ReminderTest" />
+			<class name="com.supporthub.test.PerformanceTest" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="TestSuite" time="179.285" tests="15" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/test-classes:/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/classes:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-java/4.44.0/selenium-java-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-api/4.44.0/selenium-api-4.44.0.jar:/home/altius/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.44.0/selenium-chrome-driver-4.44.0.jar:/home/altius/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.44.0/selenium-chromium-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-json/4.44.0/selenium-json-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.44.0/selenium-manager-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.44.0/selenium-devtools-v146-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.44.0/selenium-devtools-v147-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.44.0/selenium-devtools-v148-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.44.0/selenium-edge-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.44.0/selenium-firefox-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-http/4.44.0/selenium-http-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.44.0/selenium-ie-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.44.0/selenium-remote-driver-4.44.0.jar:/home/altius/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/home/altius/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/altius/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/altius/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/home/altius/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-api/1.62.0/opentelemetry-api-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-context/1.62.0/opentelemetry-context-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-common/1.62.0/opentelemetry-common-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.62.0/opentelemetry-exporter-logging-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.62.0/opentelemetry-sdk-common-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.62.0/opentelemetry-sdk-extension-autoconfigure-spi-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.62.0/opentelemetry-sdk-extension-autoconfigure-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.62.0/opentelemetry-sdk-trace-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.62.0/opentelemetry-sdk-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.62.0/opentelemetry-sdk-metrics-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.62.0/opentelemetry-sdk-logs-1.62.0.jar:/home/altius/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-os/4.44.0/selenium-os-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.44.0/selenium-safari-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-support/4.44.0/selenium-support-4.44.0.jar:/home/altius/.m2/repository/org/testng/testng/7.11.0/testng-7.11.0.jar:/home/altius/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/altius/.m2/repository/org/jcommander/jcommander/1.83/jcommander-1.83.jar:/home/altius/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/altius/.m2/repository/io/qameta/allure/allure-testng/2.35.4/allure-testng-2.35.4.jar:/home/altius/.m2/repository/io/qameta/allure/allure-java-commons/2.35.4/allure-java-commons-2.35.4.jar:/home/altius/.m2/repository/io/qameta/allure/allure-model/2.35.4/allure-model-2.35.4.jar:/home/altius/.m2/repository/io/qameta/allure/allure-test-filter/2.35.4/allure-test-filter-2.35.4.jar:/home/altius/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/altius/.m2/repository/org/slf4j/slf4j-simple/2.0.12/slf4j-simple-2.0.12.jar:/home/altius/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/surefire/surefirebooter-20261011190724178_3.jar /home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/surefire 2026-10-11T19-07-23_986-jvmRun1 surefire-20261011190724178_1tmp surefire_0-20261011190724178_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/test-classes:/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/classes:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-java/4.44.0/selenium-java-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-api/4.44.0/selenium-api-4.44.0.jar:/home/altius/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.44.0/selenium-chrome-driver-4.44.0.jar:/home/altius/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.44.0/selenium-chromium-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-json/4.44.0/selenium-json-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.44.0/selenium-manager-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v146/4.44.0/selenium-devtools-v146-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v147/4.44.0/selenium-devtools-v147-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v148/4.44.0/selenium-devtools-v148-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.44.0/selenium-edge-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.44.0/selenium-firefox-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-http/4.44.0/selenium-http-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.44.0/selenium-ie-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.44.0/selenium-remote-driver-4.44.0.jar:/home/altius/.m2/repository/com/google/guava/guava/33.6.0-jre/guava-33.6.0-jre.jar:/home/altius/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/home/altius/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/altius/.m2/repository/com/google/errorprone/error_prone_annotations/2.47.0/error_prone_annotations-2.47.0.jar:/home/altius/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-api/1.62.0/opentelemetry-api-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-context/1.62.0/opentelemetry-context-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-common/1.62.0/opentelemetry-common-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.62.0/opentelemetry-exporter-logging-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.62.0/opentelemetry-sdk-common-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.62.0/opentelemetry-sdk-extension-autoconfigure-spi-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.62.0/opentelemetry-sdk-extension-autoconfigure-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.62.0/opentelemetry-sdk-trace-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.62.0/opentelemetry-sdk-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.62.0/opentelemetry-sdk-metrics-1.62.0.jar:/home/altius/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.62.0/opentelemetry-sdk-logs-1.62.0.jar:/home/altius/.m2/repository/net/bytebuddy/byte-buddy/1.18.8-jdk5/byte-buddy-1.18.8-jdk5.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-os/4.44.0/selenium-os-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.44.0/selenium-safari-driver-4.44.0.jar:/home/altius/.m2/repository/org/seleniumhq/selenium/selenium-support/4.44.0/selenium-support-4.44.0.jar:/home/altius/.m2/repository/org/testng/testng/7.11.0/testng-7.11.0.jar:/home/altius/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/altius/.m2/repository/org/jcommander/jcommander/1.83/jcommander-1.83.jar:/home/altius/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:/home/altius/.m2/repository/io/qameta/allure/allure-testng/2.35.4/allure-testng-2.35.4.jar:/home/altius/.m2/repository/io/qameta/allure/allure-java-commons/2.35.4/allure-java-commons-2.35.4.jar:/home/altius/.m2/repository/io/qameta/allure/allure-model/2.35.4/allure-model-2.35.4.jar:/home/altius/.m2/repository/io/qameta/allure/allure-test-filter/2.35.4/allure-test-filter-2.35.4.jar:/home/altius/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/altius/.m2/repository/org/slf4j/slf4j-simple/2.0.12/slf4j-simple-2.0.12.jar:/home/altius/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/altius"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-08-18"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/surefire/surefirebooter-20261011190724178_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.12.1+1-1-24.04.4-Ubuntu"/>
+    <property name="user.name" value="altius"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="7.0.0-38-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/altius/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.12.1"/>
+    <property name="user.dir" value="/home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.12.1+1-1-24.04.4-Ubuntu"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testCreateTicketWithValidCustomer" classname="com.supporthub.test.CreateTicketTest" time="10.288">
+    <system-out><![CDATA[BaseClass: Config properties file loaded successfully from path: /home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/src/main/resources/config.properties
+=================================================
+SUITE EXECUTION STARTED: SupportHub Regression Suite
+=================================================
+Setting up WebDriver for : CreateTicketTest
+Webdriver instance is created.
+TEST STARTED: testCreateTicketWithValidCustomer on thread [1]
+Handled 'Already logged in' alert popup successfully.
+Clicked on Create Ticket button.
+TEST PASSED: testCreateTicketWithValidCustomer
+]]></system-out>
+    <system-err><![CDATA[[main] INFO org.testng.internal.Utils - [XmlSuite] [WARN] 'parallel' value 'false' is no longer valid, defaulting to 'none'.
+[main] ERROR io.qameta.allure.AllureLifecycle - Could not update test case: no test case running
+[main] ERROR io.qameta.allure.AllureLifecycle - Could not update test case: no test case running
+Oct 11, 2026 7:07:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testCreateTicketValidationOnMissingFields" classname="com.supporthub.test.CreateTicketTest" time="8.619">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : CreateTicketTest
+Webdriver instance is created.
+TEST STARTED: testCreateTicketValidationOnMissingFields on thread [1]
+Handled 'Already logged in' alert popup successfully.
+Clicked on Create Ticket button.
+TEST PASSED: testCreateTicketValidationOnMissingFields
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:07:44 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testApplyQuickFilterAndToggleClose" classname="com.supporthub.test.ApplyFilterTest" time="15.481">
+    <failure message="Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),&apos;Urgent&apos;)]&#10;(tried for 10 seconds with 500 milliseconds interval)&#10;Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;7.0.0-38-generic&apos;, java.version: &apos;21.0.12.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725876013}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38785}, goog:processID: 33627, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38785/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 1cb17b6566a054a789bc3afa521402f3" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),'Urgent')]
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.44.0', revision: 'da2039b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.0-38-generic', java.version: '21.0.12.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725876013}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38785}, goog:processID: 33627, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38785/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1cb17b6566a054a789bc3afa521402f3
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.supporthub.pages.TicketPage.selectFilterPriority(TicketPage.java:96)
+	at com.supporthub.test.ApplyFilterTest.testApplyQuickFilterAndToggleClose(ApplyFilterTest.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : ApplyFilterTest
+Webdriver instance is created.
+TEST STARTED: testApplyQuickFilterAndToggleClose on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST FAILED: testApplyQuickFilterAndToggleClose
+Driver found successfully! Capturing screenshot...
+Screenshot saved locally for email attachment at: /home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/screenshots/testApplyQuickFilterAndToggleClose_20261011_190815.png
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:07:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testCreateAndSaveCustomFilterViewShortcut" classname="com.supporthub.test.ApplyFilterTest" time="15.183">
+    <failure message="Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),&apos;Urgent&apos;)]&#10;(tried for 10 seconds with 500 milliseconds interval)&#10;Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;7.0.0-38-generic&apos;, java.version: &apos;21.0.12.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725896091}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42563}, goog:processID: 33971, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42563/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6f011747c5b03c0aa555a06d4e5dedeb" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),'Urgent')]
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.44.0', revision: 'da2039b'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '7.0.0-38-generic', java.version: '21.0.12.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725896091}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:42563}, goog:processID: 33971, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:42563/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6f011747c5b03c0aa555a06d4e5dedeb
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.supporthub.pages.TicketPage.selectFilterPriority(TicketPage.java:96)
+	at com.supporthub.test.ApplyFilterTest.testCreateAndSaveCustomFilterViewShortcut(ApplyFilterTest.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[BaseClass: Direct injection of failure screenshot for: testApplyQuickFilterAndToggleClose
+WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : ApplyFilterTest
+Webdriver instance is created.
+TEST STARTED: testCreateAndSaveCustomFilterViewShortcut on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST FAILED: testCreateAndSaveCustomFilterViewShortcut
+Driver found successfully! Capturing screenshot...
+Screenshot saved locally for email attachment at: /home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/screenshots/testCreateAndSaveCustomFilterViewShortcut_20261011_190835.png
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:08:17 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testSearchWithNonMatchingFilterCriteria" classname="com.supporthub.test.ApplyFilterTest" time="4.783">
+    <system-out><![CDATA[BaseClass: Direct injection of failure screenshot for: testCreateAndSaveCustomFilterViewShortcut
+WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : ApplyFilterTest
+Webdriver instance is created.
+TEST STARTED: testSearchWithNonMatchingFilterCriteria on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testSearchWithNonMatchingFilterCriteria
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:08:36 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testSearchTicketById" classname="com.supporthub.test.ApplyFilterTest" time="4.134">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : ApplyFilterTest
+Webdriver instance is created.
+TEST STARTED: testSearchTicketById on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testSearchTicketById
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:08:46 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testCreateNewCustomer[Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, VIP Customer, Nagpur, 440001, @rahul_sharma](1)" classname="com.supporthub.test.CreateCustomerTest" time="9.218">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : CreateCustomerTest
+Webdriver instance is created.
+TEST STARTED: testCreateNewCustomer on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testCreateNewCustomer
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:08:55 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testBlankMandatoryNameValidation[, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, Test Notes, Nagpur, 440001, @test](1)" classname="com.supporthub.test.CreateCustomerTest" time="9.185">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : CreateCustomerTest
+Webdriver instance is created.
+TEST STARTED: testBlankMandatoryNameValidation on thread [1]
+Handled 'Already logged in' alert popup successfully.
+Gender selection handled via fallback
+TEST PASSED: testBlankMandatoryNameValidation
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:09:09 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testImportCustomersCSV" classname="com.supporthub.test.CreateCustomerTest" time="4.649">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : CreateCustomerTest
+Webdriver instance is created.
+TEST STARTED: testImportCustomersCSV on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testImportCustomersCSV
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:09:22 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testCustomerDeduplicationViaCSV" classname="com.supporthub.test.CreateCustomerTest" time="4.568">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : CreateCustomerTest
+Webdriver instance is created.
+TEST STARTED: testCustomerDeduplicationViaCSV on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testCustomerDeduplicationViaCSV
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:09:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testSetTicketReminder" classname="com.supporthub.test.ReminderTest" time="5.266">
+    <failure message="Assertion Failed: Reminder success toast message is not displayed! expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Assertion Failed: Reminder success toast message is not displayed! expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.supporthub.test.ReminderTest.testSetTicketReminder(ReminderTest.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : ReminderTest
+Webdriver instance is created.
+TEST STARTED: testSetTicketReminder on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST FAILED: testSetTicketReminder
+Driver found successfully! Capturing screenshot...
+Screenshot saved locally for email attachment at: /home/altius/snap/eclipse/common/eclipse-workspace/SupportHubProject/target/screenshots/testSetTicketReminder_20261011_190948.png
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:09:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testBlankReminderNoteValidation[, 10-18-2026, 07:50PM](1)" classname="com.supporthub.test.ReminderTest" time="4.846">
+    <system-out><![CDATA[BaseClass: Direct injection of failure screenshot for: testSetTicketReminder
+WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : ReminderTest
+Webdriver instance is created.
+TEST STARTED: testBlankReminderNoteValidation on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testBlankReminderNoteValidation
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:09:50 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testSearchAgentInPerformanceGrid[Harshik, Harshik Titirmare](1)" classname="com.supporthub.test.PerformanceTest" time="3.914">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : PerformanceTest
+Webdriver instance is created.
+TEST STARTED: testSearchAgentInPerformanceGrid on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testSearchAgentInPerformanceGrid
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:09:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testSearchNonExistingAgentInPerformanceGrid[XYZTest](1)" classname="com.supporthub.test.PerformanceTest" time="4.079">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : PerformanceTest
+Webdriver instance is created.
+TEST STARTED: testSearchNonExistingAgentInPerformanceGrid on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testSearchNonExistingAgentInPerformanceGrid
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:10:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+  <testcase name="testExportExcelReportGeneration[Chat support, This Month](1)" classname="com.supporthub.test.PerformanceTest" time="4.625">
+    <system-out><![CDATA[WebDriver instance is close.
+ActionDriver instance is close.
+Setting up WebDriver for : PerformanceTest
+Webdriver instance is created.
+TEST STARTED: testExportExcelReportGeneration on thread [1]
+Handled 'Already logged in' alert popup successfully.
+TEST PASSED: testExportExcelReportGeneration
+]]></system-out>
+    <system-err><![CDATA[Oct 11, 2026 7:10:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 151, returning the closest version; found: 148; Please update to a Selenium version that supports CDP version 151
+]]></system-err>
+  </testcase>
+</testsuite>
