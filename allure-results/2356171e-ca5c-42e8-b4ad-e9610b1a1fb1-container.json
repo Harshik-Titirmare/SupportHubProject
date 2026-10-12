@@ -1,1 +1,0 @@
-{"uuid":"2356171e-ca5c-42e8-b4ad-e9610b1a1fb1","name":"testExportExcelReportGeneration","children":["b5bc1be4-d5a0-4535-b763-ea51b3535db1"],"befores":[{"name":"getExportExcelData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1791722544770,"stop":1791722544771}],"afters":[],"start":1791722544769,"stop":1791722553705}

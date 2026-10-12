@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-SupportHubSuite" class="navigator-link">
-              <span class="suite-name border-failed">SupportHubSuite</span>
+              <span class="suite-name border-passed">SupportHubSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,26 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods, 2 failed,   13 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-SupportHubSuite" class="hide-methods failed suite-SupportHubSuite"> (hide)</a> <!-- hide-methods failed suite-SupportHubSuite -->
-                      <a href="#" panel-name="suite-SupportHubSuite" class="show-methods failed suite-SupportHubSuite"> (show)</a> <!-- show-methods failed suite-SupportHubSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-SupportHubSuite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testApplyQuickFilterAndToggleClose">testApplyQuickFilterAndToggleClose</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testCreateAndSaveCustomFilterViewShortcut">testCreateAndSaveCustomFilterViewShortcut</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-SupportHubSuite -->
+                    <span class="method-stats">15 methods,   15 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -122,12 +103,22 @@
                     <div class="method-list-content passed suite-SupportHubSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testApplyQuickFilterAndToggleClose">testApplyQuickFilterAndToggleClose</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.CreateCustomerTest" class="method navigator-link" hash-for-method="testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)">testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ReminderTest" class="method navigator-link" hash-for-method="testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)">testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-SupportHubSuite" title="com.supporthub.test.ApplyFilterTest" class="method navigator-link" hash-for-method="testCreateAndSaveCustomFilterViewShortcut">testCreateAndSaveCustomFilterViewShortcut</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -197,56 +188,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SupportHubSuite" class="panel SupportHubSuite">
-          <div class="suite-SupportHubSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.supporthub.test.ApplyFilterTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testApplyQuickFilterAndToggleClose">
-                  </a> <!-- testApplyQuickFilterAndToggleClose -->
-                  <span class="method-name">testApplyQuickFilterAndToggleClose</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),&apos;Urgent&apos;)]
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;7.0.0-38-generic&apos;, java.version: &apos;17.0.20.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725137748}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:46881}, goog:processID: 27994, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:46881/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3da45653de8f563ed32ef9991d5bb604
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
-	at com.supporthub.pages.TicketPage.selectFilterPriority(TicketPage.java:96)
-	at com.supporthub.test.ApplyFilterTest.testApplyQuickFilterAndToggleClose(ApplyFilterTest.java:22)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCreateAndSaveCustomFilterViewShortcut">
-                  </a> <!-- testCreateAndSaveCustomFilterViewShortcut -->
-                  <span class="method-name">testCreateAndSaveCustomFilterViewShortcut</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element found by By.xpath: //*[contains(text(),&apos;Urgent&apos;)]
-(tried for 10 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.44.0&apos;, revision: &apos;da2039b&apos;
-System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;7.0.0-38-generic&apos;, java.version: &apos;17.0.20.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 151.0.7922.71, chrome: {chromedriverVersion: 151.0.7922.138 (41fa8244239..., userDataDir: /tmp/user-data-1791725158001}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:40503}, goog:processID: 28353, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:40503/devtoo..., se:cdpVersion: 151.0.7922.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 39a4fbbe476deaa626a0d5c6410b3075
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
-	at com.supporthub.pages.TicketPage.selectFilterPriority(TicketPage.java:96)
-	at com.supporthub.test.ApplyFilterTest.testCreateAndSaveCustomFilterViewShortcut(ApplyFilterTest.java:42)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SupportHubSuite-class-failed -->
           <div class="suite-SupportHubSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -348,6 +289,20 @@ Session ID: 39a4fbbe476deaa626a0d5c6410b3075
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="testApplyQuickFilterAndToggleClose">
+                  </a> <!-- testApplyQuickFilterAndToggleClose -->
+                  <span class="method-name">testApplyQuickFilterAndToggleClose</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateAndSaveCustomFilterViewShortcut">
+                  </a> <!-- testCreateAndSaveCustomFilterViewShortcut -->
+                  <span class="method-name">testCreateAndSaveCustomFilterViewShortcut</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testSearchTicketById">
                   </a> <!-- testSearchTicketById -->
                   <span class="method-name">testSearchTicketById</span>
@@ -445,65 +400,65 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(15);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testApplyQuickFilterAndToggleClose')
+data.setCell(0, 1, 'testCreateAndSaveCustomFilterViewShortcut')
 data.setCell(0, 2, 'com.supporthub.test.ApplyFilterTest')
-data.setCell(0, 3, 15525);
+data.setCell(0, 3, 9552);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCreateAndSaveCustomFilterViewShortcut')
-data.setCell(1, 2, 'com.supporthub.test.ApplyFilterTest')
-data.setCell(1, 3, 14922);
+data.setCell(1, 1, 'testCreateTicketWithValidCustomer')
+data.setCell(1, 2, 'com.supporthub.test.CreateTicketTest')
+data.setCell(1, 3, 8878);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testCreateNewCustomer')
 data.setCell(2, 2, 'com.supporthub.test.CreateCustomerTest')
-data.setCell(2, 3, 10491);
+data.setCell(2, 3, 7513);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testCreateTicketWithValidCustomer')
+data.setCell(3, 1, 'testCreateTicketValidationOnMissingFields')
 data.setCell(3, 2, 'com.supporthub.test.CreateTicketTest')
-data.setCell(3, 3, 10189);
+data.setCell(3, 3, 7218);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testCreateTicketValidationOnMissingFields')
-data.setCell(4, 2, 'com.supporthub.test.CreateTicketTest')
-data.setCell(4, 3, 8445);
+data.setCell(4, 1, 'testBlankMandatoryNameValidation')
+data.setCell(4, 2, 'com.supporthub.test.CreateCustomerTest')
+data.setCell(4, 3, 6746);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testBlankMandatoryNameValidation')
-data.setCell(5, 2, 'com.supporthub.test.CreateCustomerTest')
-data.setCell(5, 3, 7974);
+data.setCell(5, 1, 'testSetTicketReminder')
+data.setCell(5, 2, 'com.supporthub.test.ReminderTest')
+data.setCell(5, 3, 3878);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testSetTicketReminder')
-data.setCell(6, 2, 'com.supporthub.test.ReminderTest')
-data.setCell(6, 3, 5521);
+data.setCell(6, 1, 'testSearchAgentInPerformanceGrid')
+data.setCell(6, 2, 'com.supporthub.test.PerformanceTest')
+data.setCell(6, 3, 3692);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testImportCustomersCSV')
-data.setCell(7, 2, 'com.supporthub.test.CreateCustomerTest')
-data.setCell(7, 3, 4687);
+data.setCell(7, 1, 'testSearchTicketById')
+data.setCell(7, 2, 'com.supporthub.test.ApplyFilterTest')
+data.setCell(7, 3, 3669);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testExportExcelReportGeneration')
-data.setCell(8, 2, 'com.supporthub.test.PerformanceTest')
-data.setCell(8, 3, 4597);
+data.setCell(8, 1, 'testImportCustomersCSV')
+data.setCell(8, 2, 'com.supporthub.test.CreateCustomerTest')
+data.setCell(8, 3, 3634);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'testCustomerDeduplicationViaCSV')
 data.setCell(9, 2, 'com.supporthub.test.CreateCustomerTest')
-data.setCell(9, 3, 4548);
+data.setCell(9, 3, 3463);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testSearchWithNonMatchingFilterCriteria')
+data.setCell(10, 1, 'testApplyQuickFilterAndToggleClose')
 data.setCell(10, 2, 'com.supporthub.test.ApplyFilterTest')
-data.setCell(10, 3, 4456);
+data.setCell(10, 3, 3447);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testBlankReminderNoteValidation')
-data.setCell(11, 2, 'com.supporthub.test.ReminderTest')
-data.setCell(11, 3, 4281);
+data.setCell(11, 1, 'testExportExcelReportGeneration')
+data.setCell(11, 2, 'com.supporthub.test.PerformanceTest')
+data.setCell(11, 3, 3359);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testSearchAgentInPerformanceGrid')
-data.setCell(12, 2, 'com.supporthub.test.PerformanceTest')
-data.setCell(12, 3, 3985);
+data.setCell(12, 1, 'testBlankReminderNoteValidation')
+data.setCell(12, 2, 'com.supporthub.test.ReminderTest')
+data.setCell(12, 3, 3197);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testSearchTicketById')
+data.setCell(13, 1, 'testSearchWithNonMatchingFilterCriteria')
 data.setCell(13, 2, 'com.supporthub.test.ApplyFilterTest')
-data.setCell(13, 3, 3967);
+data.setCell(13, 3, 3138);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'testSearchNonExistingAgentInPerformanceGrid')
 data.setCell(14, 2, 'com.supporthub.test.PerformanceTest')
-data.setCell(14, 3, 3894);
+data.setCell(14, 3, 3114);
 window.suiteTableData['SupportHubSuite']= { tableData: data, tableDiv: 'times-div-SupportHubSuite'}
 return data;
 }
@@ -523,12 +478,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-SupportHubSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">8 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.supporthub.test.ReminderTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">clearAllureResults</span>
+                <br/>
                 <span class="ignored-method-name">loadConfig</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -536,6 +493,8 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.supporthub.test.CreateCustomerTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">clearAllureResults</span>
+                <br/>
                 <span class="ignored-method-name">loadConfig</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -543,6 +502,8 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.supporthub.test.PerformanceTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">clearAllureResults</span>
+                <br/>
                 <span class="ignored-method-name">loadConfig</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -550,6 +511,8 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.supporthub.test.ApplyFilterTest</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">clearAllureResults</span>
+                <br/>
                 <span class="ignored-method-name">loadConfig</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -564,204 +527,204 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.supporthub.test.CreateTicketTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">loadConfig</span>
+                <span class="method-name">clearAllureResults</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-suite before">
+                <span class="method-name">loadConfig</span>
+                <span class="method-start">86 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">162 ms</span>
+                <span class="method-start">147 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testCreateTicketWithValidCustomer</span>
-                <span class="method-start">5576 ms</span>
+                <span class="method-start">4249 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testCreateTicketWithValidCustomer status=SUCCESS method=CreateTicketTest.testCreate...)</span>
-                <span class="method-start">15793 ms</span>
+                <span class="method-start">13141 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">16033 ms</span>
+                <span class="method-start">13284 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testCreateTicketValidationOnMissingFields</span>
-                <span class="method-start">20067 ms</span>
+                <span class="method-start">16819 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testCreateTicketValidationOnMissingFields status=SUCCESS method=CreateTicketTest.te...)</span>
-                <span class="method-start">28531 ms</span>
+                <span class="method-start">24047 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.supporthub.test.ApplyFilterTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">28769 ms</span>
+                <span class="method-start">24198 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testApplyQuickFilterAndToggleClose</span>
-                <span class="method-start">32847 ms</span>
+                <span class="method-start">27554 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testApplyQuickFilterAndToggleClose status=FAILURE method=ApplyFilterTest.testApplyQ...)</span>
-                <span class="method-start">48662 ms</span>
+                <span class="method-name">tearDown([TestResult name=testApplyQuickFilterAndToggleClose status=SUCCESS method=ApplyFilterTest.testApplyQ...)</span>
+                <span class="method-start">31005 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">49023 ms</span>
+                <span class="method-start">31186 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testCreateAndSaveCustomFilterViewShortcut</span>
-                <span class="method-start">54140 ms</span>
+                <span class="method-start">34685 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=testCreateAndSaveCustomFilterViewShortcut status=FAILURE method=ApplyFilterTest.tes...)</span>
-                <span class="method-start">69364 ms</span>
+                <span class="method-name">tearDown([TestResult name=testCreateAndSaveCustomFilterViewShortcut status=SUCCESS method=ApplyFilterTest.tes...)</span>
+                <span class="method-start">44241 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">69799 ms</span>
+                <span class="method-start">44392 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSearchWithNonMatchingFilterCriteria</span>
-                <span class="method-start">73909 ms</span>
+                <span class="method-start">47907 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testSearchWithNonMatchingFilterCriteria status=SUCCESS method=ApplyFilterTest.testS...)</span>
-                <span class="method-start">78369 ms</span>
+                <span class="method-start">51048 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">78631 ms</span>
+                <span class="method-start">51262 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSearchTicketById</span>
-                <span class="method-start">83119 ms</span>
+                <span class="method-start">54598 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testSearchTicketById status=SUCCESS method=ApplyFilterTest.testSearchTicketById()[p...)</span>
-                <span class="method-start">87093 ms</span>
+                <span class="method-start">58269 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.supporthub.test.CreateCustomerTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">87410 ms</span>
+                <span class="method-start">58461 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testCreateNewCustomer(Rahul Sharma, 9876543210, rahul.sharma@example.com, India, Maharashtra, Social Media, 12/15/1995, Ma...)</span>
-                <span class="method-start">91439 ms</span>
+                <span class="method-start">61938 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testCreateNewCustomer status=SUCCESS method=CreateCustomerTest.testCreateNewCustome...)</span>
-                <span class="method-start">101937 ms</span>
+                <span class="method-start">69457 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">102157 ms</span>
+                <span class="method-start">69638 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testBlankMandatoryNameValidation(, 9876543210, blank.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, T...)</span>
-                <span class="method-start">106414 ms</span>
+                <span class="method-start">73020 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testBlankMandatoryNameValidation status=SUCCESS method=CreateCustomerTest.testBlank...)</span>
-                <span class="method-start">114391 ms</span>
+                <span class="method-start">79768 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">114657 ms</span>
+                <span class="method-start">79955 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testImportCustomersCSV</span>
-                <span class="method-start">119771 ms</span>
+                <span class="method-start">83415 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testImportCustomersCSV status=SUCCESS method=CreateCustomerTest.testImportCustomers...)</span>
-                <span class="method-start">124462 ms</span>
+                <span class="method-start">87052 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">124765 ms</span>
+                <span class="method-start">87232 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testCustomerDeduplicationViaCSV</span>
-                <span class="method-start">128814 ms</span>
+                <span class="method-start">90701 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testCustomerDeduplicationViaCSV status=SUCCESS method=CreateCustomerTest.testCustom...)</span>
-                <span class="method-start">133372 ms</span>
+                <span class="method-start">94167 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.supporthub.test.ReminderTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">133659 ms</span>
+                <span class="method-start">94349 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSetTicketReminder</span>
-                <span class="method-start">137763 ms</span>
+                <span class="method-start">97858 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testSetTicketReminder status=SUCCESS method=ReminderTest.testSetTicketReminder()[pr...)</span>
-                <span class="method-start">143289 ms</span>
+                <span class="method-start">101738 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">143549 ms</span>
+                <span class="method-start">101919 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testBlankReminderNoteValidation(, 10-18-2026, 07:50PM)</span>
-                <span class="method-start">147602 ms</span>
+                <span class="method-start">105259 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testBlankReminderNoteValidation status=SUCCESS method=ReminderTest.testBlankReminde...)</span>
-                <span class="method-start">151886 ms</span>
+                <span class="method-start">108458 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.supporthub.test.PerformanceTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">152104 ms</span>
+                <span class="method-start">108637 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSearchAgentInPerformanceGrid(Harshik, Harshik Titirmare)</span>
-                <span class="method-start">156118 ms</span>
+                <span class="method-start">111989 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testSearchAgentInPerformanceGrid status=SUCCESS method=PerformanceTest.testSearchAg...)</span>
-                <span class="method-start">160107 ms</span>
+                <span class="method-start">115683 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">160331 ms</span>
+                <span class="method-start">115862 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSearchNonExistingAgentInPerformanceGrid(XYZTest)</span>
-                <span class="method-start">164494 ms</span>
+                <span class="method-start">119406 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testSearchNonExistingAgentInPerformanceGrid status=SUCCESS method=PerformanceTest.t...)</span>
-                <span class="method-start">168395 ms</span>
+                <span class="method-start">122523 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">168617 ms</span>
+                <span class="method-start">122706 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testExportExcelReportGeneration(Chat support, This Month)</span>
-                <span class="method-start">173199 ms</span>
+                <span class="method-start">126085 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=testExportExcelReportGeneration status=SUCCESS method=PerformanceTest.testExportExc...)</span>
-                <span class="method-start">177801 ms</span>
+                <span class="method-start">129447 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

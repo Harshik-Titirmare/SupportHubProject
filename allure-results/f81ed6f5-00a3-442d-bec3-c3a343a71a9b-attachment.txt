@@ -1,2 +1,0 @@
-Test execution failed due to:
-Assertion Failed: Reminder success toast message is not displayed! expected [true] but found [false]

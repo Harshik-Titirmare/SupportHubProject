@@ -1,6 +1,8 @@
 package com.supporthub.base;
 
 import java.io.FileInputStream;
+import java.io.File; 
+import org.testng.annotations.BeforeSuite;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -17,7 +19,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+
 
 import com.supporthub.actiondriver.ActionDriver;
 
@@ -29,8 +31,8 @@ public class BaseClass {
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	public static ThreadLocal<ActionDriver> actionDriver = new ThreadLocal<>();
 
-
-	// NEW FIX: Load configuration file with correct path separator and try-catch for complete stacktrace visibility in Jenkins logs
+	// NEW FIX: Load configuration file with correct path separator and try-catch
+	// for complete stacktrace visibility in Jenkins logs
 	@BeforeSuite(alwaysRun = true)
 	public void loadConfig() throws IOException {
 		prop = new Properties();
@@ -46,8 +48,26 @@ public class BaseClass {
 		}
 	}
 
+	@BeforeSuite
+	public void clearAllureResults() {
+		File allureResultsDir = new File(System.getProperty("user.dir") + "/allure-results");
+		if (allureResultsDir.exists()) {
+			try {
+				// Delete all files inside allure-results before a fresh test suite run
+				for (File file : allureResultsDir.listFiles()) {
+					if (!file.isDirectory()) {
+						file.delete();
+					}
+				}
+				System.out.println("Previous allure-results cleared successfully for the new run.");
+			} catch (Exception e) {
+				System.out.println("Failed to clear allure-results: " + e.getMessage());
+			}
+		}
+	}
 
-	// NEW FIX: Wrapped setup execution inside explicit try-catch block to log detailed exceptions in Jenkins Console output
+	// NEW FIX: Wrapped setup execution inside explicit try-catch block to log
+	// detailed exceptions in Jenkins Console output
 	@BeforeMethod(alwaysRun = true)
 	public synchronized void setup() throws IOException {
 		try {
@@ -70,13 +90,14 @@ public class BaseClass {
 		String browser = prop.getProperty("browser", "chrome");
 
 		if (browser == null) {
-			throw new IllegalArgumentException("Browser property is null! Please check key 'browser' in config.properties file.");
+			throw new IllegalArgumentException(
+					"Browser property is null! Please check key 'browser' in config.properties file.");
 		}
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			// Create ChromeOptions instance to pass browser configuration arguments
 			ChromeOptions options = new ChromeOptions();
-			
+
 			// Disable Chrome Native Push Notifications & Geolocation popups
 			options.addArguments("--disable-notifications");
 			options.addArguments("--disable-popup-blocking");
@@ -91,14 +112,14 @@ public class BaseClass {
 			options.addArguments("--window-size=1920,1080"); // Set explicit browser viewport size to ensure elements
 																// load properly without UI scaling issues
 
-
-			// NEW FIX: Added explicit remote-allow-origins along with CI stability arguments for headless execution
+			// NEW FIX: Added explicit remote-allow-origins along with CI stability
+			// arguments for headless execution
 			options.addArguments("--remote-allow-origins=*");
-			
+
 			// CRITICAL FIX FOR LINUX CHROME INSTANCE EXITED ERROR
-		    options.addArguments("--user-data-dir=/tmp/user-data-" + System.currentTimeMillis());
-		    options.addArguments("--disable-extensions");
-		    options.addArguments("--disable-setuid-sandbox");
+			options.addArguments("--user-data-dir=/tmp/user-data-" + System.currentTimeMillis());
+			options.addArguments("--disable-extensions");
+			options.addArguments("--disable-setuid-sandbox");
 
 			// NEW FIX: Create ChromeDriver instance with options for thread-safe assignment
 			driver.set(new ChromeDriver(options));
@@ -128,12 +149,14 @@ public class BaseClass {
 		int imlicitWait = Integer.parseInt(prop.getProperty("implicitWait"));
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(imlicitWait));
 
-		/* ==================== OLD CODE COMMENTED OUT ====================
-		// Maximize The Browser
-		// getDriver().manage().window().maximize();
-		================================================================= */
+		/*
+		 * ==================== OLD CODE COMMENTED OUT ==================== // Maximize
+		 * The Browser // getDriver().manage().window().maximize();
+		 * =================================================================
+		 */
 
-		// NEW COMMENT: Avoid maximize() in headless mode as viewport resolution is already set via window-size options argument
+		// NEW COMMENT: Avoid maximize() in headless mode as viewport resolution is
+		// already set via window-size options argument
 
 		// Navigate to url
 		try {
@@ -205,12 +228,12 @@ public class BaseClass {
 		return actionDriver.get();
 	}
 
-	/* ==================== OLD CODE COMMENTED OUT ====================
-	// Driver setter Method
-	// public void setDriver(ThreadLocal<WebDriver> driver) {
-	// 	this.driver = driver;
-	// }
-	================================================================= */
+	/*
+	 * ==================== OLD CODE COMMENTED OUT ==================== // Driver
+	 * setter Method // public void setDriver(ThreadLocal<WebDriver> driver) { //
+	 * this.driver = driver; // }
+	 * =================================================================
+	 */
 
 	// static wait for pause
 	public void staticWait(int seconds) {

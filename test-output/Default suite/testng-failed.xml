@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.supporthub.test.PerformanceTest">
+      <class name="com.supporthub.test.ApplyFilterTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testExportExcelReportGeneration" invocation-numbers="0"/>
+          <include name="testApplyQuickFilterAndToggleClose"/>
           <include name="setup"/>
           <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.supporthub.test.PerformanceTest -->
+      </class> <!-- com.supporthub.test.ApplyFilterTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -82,24 +82,25 @@ public class TicketPage {
 	}
 
 	// Select Priority Checkbox
-	public void selectFilterPriority(String priorityName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		public void selectFilterPriority(String priorityName) {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(priorityDropdownBtn));
-		dropdown.click();
+			// Wait for the priority dropdown button to be clickable and click it to open the popover
+			WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(priorityDropdownBtn));
+			dropdown.click();
 
-		WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(searchPriorityInput));
-		searchInput.clear();
-		searchInput.sendKeys(priorityName);
+			// Wait for the priority search input field to be visible, clear it, and type the priority name
+			WebElement searchInput = wait.until(ExpectedConditions.visibilityOfElementLocated(searchPriorityInput));
+			searchInput.clear();
+			searchInput.sendKeys(priorityName);
 
-		By filteredItem = By.xpath("//*[contains(text(),'" + priorityName + "')]");
-		wait.until(ExpectedConditions.presenceOfElementLocated(filteredItem));
+			// Since typing automatically highlights the matching item in the command menu (cmdk),
+			// pressing ENTER directly selects the highlighted option without needing ARROW_DOWN.
+			searchInput.sendKeys(Keys.ENTER);
 
-		searchInput.sendKeys(Keys.ARROW_DOWN);
-		searchInput.sendKeys(Keys.ENTER);
-
-		dropdown.click();
-	}
+			// Close the dropdown popover by clicking the dropdown button again
+			dropdown.click();
+		}
 
 	// Save Custom Filter View
 	public void saveCustomFilterView(String viewName) {
