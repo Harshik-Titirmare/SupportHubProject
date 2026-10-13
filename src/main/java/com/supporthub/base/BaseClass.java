@@ -1,7 +1,7 @@
 package com.supporthub.base;
 
 import java.io.FileInputStream;
-import java.io.File; 
+import java.io.File;
 import org.testng.annotations.BeforeSuite;
 import java.io.IOException;
 import java.time.Duration;
@@ -17,9 +17,9 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.BeforeClass;
 
 import com.supporthub.actiondriver.ActionDriver;
 
@@ -66,22 +66,39 @@ public class BaseClass {
 		}
 	}
 
-	// NEW FIX: Wrapped setup execution inside explicit try-catch block to log
-	// detailed exceptions in Jenkins Console output
-	@BeforeMethod(alwaysRun = true)
+	/*
+	 * ==================== SINGLE-SESSION EXECUTION CHANGE ==================== OLD
+	 * CODE: @BeforeMethod(alwaysRun = true) -> Runs setup before EVERY test method.
+	 * NEW CODE: @BeforeClass(alwaysRun = true) -> Runs setup ONLY ONCE per test
+	 * class.
+	 * ===========================================================================
+	 */
+	@BeforeClass(alwaysRun = true)
 	public synchronized void setup() throws IOException {
 		try {
-			System.out.println("Setting up WebDriver for : " + this.getClass().getSimpleName());
+			System.out.println("Setting up WebDriver for class: " + this.getClass().getSimpleName());
 			launchBrowser();
 			configureBrowser();
 			staticWait(2);
 
-			// Initialize the Action Driver only for The Current Thread
 			actionDriver.set(new ActionDriver(driver.get()));
+
+			// ==================== AUTOMATIC SINGLE-SESSION LOGIN ====================
+			// Automatically perform login once per test class session after navigating to
+			// URL
+			System.out.println("Performing automated class-level login...");
+			com.supporthub.pages.LoginPage loginPage = new com.supporthub.pages.LoginPage(getDriver(),
+					getActionDriver());
+			String email = prop.getProperty("username");
+			String pass = prop.getProperty("password");
+			loginPage.login(email, pass);
+			staticWait(2); // Wait for dashboard to load completely
+			// =========================================================================
+
 		} catch (Exception e) {
-			System.out.println("BaseClass ERROR: Exception occurred inside @BeforeMethod setup: " + e.getMessage());
+			System.out.println("BaseClass ERROR: Exception occurred inside @BeforeClass setup: " + e.getMessage());
 			e.printStackTrace();
-			throw e; // Rethrow exception so TestNG catches configuration failures
+			throw e;
 		}
 	}
 
@@ -103,7 +120,7 @@ public class BaseClass {
 			options.addArguments("--disable-popup-blocking");
 
 			// Configure Chrome for headless execution
-			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
+//			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
 			options.addArguments("--no-sandbox"); // necessary when running Chrome as the 'jenkins' service user
 			options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems in shared memory
 																// environments (prevents Chrome crashes)
@@ -150,8 +167,8 @@ public class BaseClass {
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(imlicitWait));
 
 		/*
-		 * ==================== OLD CODE COMMENTED OUT ==================== // Maximize
-		 * The Browser // getDriver().manage().window().maximize();
+		 * - ==================== OLD CODE COMMENTED OUT ==================== //
+		 * Maximize - The Browser // getDriver().manage().window().maximize(); -
 		 * =================================================================
 		 */
 
@@ -166,45 +183,72 @@ public class BaseClass {
 		}
 	}
 
-	// Capture screenshot using Allure programmatic API before cleaning thread
-	// context wrappers
+	/*
+	 * ==================== SINGLE-SESSION EXECUTION CHANGE ==================== OLD
+	 * CODE: @AfterMethod(alwaysRun = true) -> Quits driver after EVERY test method.
+	 * NEW CODE: @AfterClass(alwaysRun = true) -> Quits driver ONLY ONCE after all
+	 * test methods in the class complete.
+	 * ===========================================================================
+	 */
+	// Capture screenshot on test failure using @AfterMethod
 	@AfterMethod(alwaysRun = true)
-	public synchronized void tearDown(ITestResult result) {
-
-		// 1. Capture screenshot using Allure's direct programmatic API if the test
-		// fails
+	public void captureScreenshotOnFailure(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			try {
 				if (driver.get() != null) {
-					System.out.println("BaseClass: Direct injection of failure screenshot for: " + result.getName());
+					System.out.println("BaseClass: Capturing failure screenshot for method: " + result.getName());
 
-					// Capture bytes from browser
+					// Capture screenshot bytes from the active driver session
 					byte[] screenshotBytes = ((org.openqa.selenium.TakesScreenshot) getDriver())
 							.getScreenshotAs(org.openqa.selenium.OutputType.BYTES);
 
-					// Directly push into the active Allure report stream
-					io.qameta.allure.Allure.addAttachment("Failure Screenshot",
+					// Directly attach the screenshot into the active Allure report stream
+					io.qameta.allure.Allure.addAttachment("Failure Screenshot - " + result.getName(),
 							new java.io.ByteArrayInputStream(screenshotBytes));
 				}
 			} catch (Exception e) {
-				System.out.println("BaseClass: Programmatic attachment failed: " + e.getMessage());
+				System.out.println("BaseClass: Failed to capture failure screenshot: " + e.getMessage());
 			}
 		}
+	}
 
-		// 2. Clear browser contexts normally safely
-		try {
-			if (driver.get() != null) {
-				driver.get().quit();
-				System.out.println("WebDriver instance is close.");
+	// Quit the browser session once all tests in the class are completed
+	@AfterClass(alwaysRun = true)
+		public synchronized void tearDown() {
+			try {
+				if (driver.get() != null) {
+					driver.get().quit();
+					System.out.println("WebDriver instance is closed.");
+				}
+			} catch (Exception e) {
+				System.out.println("Unable to quit the driver: " + e.getMessage());
+			} finally {
+				// Clean up thread-local instances to prevent memory leaks
+				driver.remove();
+				actionDriver.remove();
+				System.out.println("ActionDriver instance is closed.");
 			}
-		} catch (Exception e) {
-			System.out.println("unable to quit the driver" + e.getMessage());
-		} finally {
-			// Thread cleanups to prevent memory leaks or context overlaps
-			driver.remove();
-			actionDriver.remove();
-			System.out.println("ActionDriver instance is close.");
+		
+
+	// 2. Clear browser contexts normally safely
+	try
+
+	{
+		if (driver.get() != null) {
+			driver.get().quit();
+			System.out.println("WebDriver instance is close.");
 		}
+	}catch(
+	Exception e)
+	{
+		System.out.println("unable to quit the driver" + e.getMessage());
+	}finally
+	{
+		// Thread cleanups to prevent memory leaks or context overlaps
+		driver.remove();
+		actionDriver.remove();
+		System.out.println("ActionDriver instance is close.");
+	}
 	}
 
 	// Getter method for prop
@@ -229,9 +273,9 @@ public class BaseClass {
 	}
 
 	/*
-	 * ==================== OLD CODE COMMENTED OUT ==================== // Driver
-	 * setter Method // public void setDriver(ThreadLocal<WebDriver> driver) { //
-	 * this.driver = driver; // }
+	 * - ==================== OLD CODE COMMENTED OUT ==================== // Driver
+	 * - setter Method // public void setDriver(ThreadLocal<WebDriver> driver) { //
+	 * - this.driver = driver; // } -
 	 * =================================================================
 	 */
 

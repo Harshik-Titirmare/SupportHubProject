@@ -15,18 +15,20 @@ public class PerformancePage {
 
 	// --- All Locators Cleanly Declared at the Top ---
 	private By performanceNavTab = By.xpath("//a[contains(@href,'/performance') or @title='Performance']");
-	private By agentSearchInput = By.xpath("//input[contains(@placeholder,'Search') or @type='search' or contains(@class,'search')]");
-	
+	private By agentSearchInput = By
+			.xpath("//input[contains(@placeholder,'Search') or @type='search' or contains(@class,'search')]");
+
 	// Team & Filter Locators
 	private By teamsDropdownBtn = By.xpath("//*[normalize-space()='All Teams']");
-	private By teamDropdownSearchInput = By.xpath("//div[contains(@class,'dropdown') or contains(@class,'menu') or contains(@class, 'popover')]//input[@placeholder='Search...'] | //div[@role='listbox']//input[@placeholder='Search...'] | //input[@placeholder='Search...'][ancestor::div[contains(@class,'absolute')]]");
-	
+	private By teamDropdownSearchInput = By.xpath(
+			"//div[contains(@class,'dropdown') or contains(@class,'menu') or contains(@class, 'popover')]//input[@placeholder='Search...'] | //div[@role='listbox']//input[@placeholder='Search...'] | //input[@placeholder='Search...'][ancestor::div[contains(@class,'absolute')]]");
+
 	// Date Dropdown Locators
 	private By dateDropdownBtn = By.xpath("//button[contains(.,'Today') or contains(.,'This Month')]");
-	
+
 	// Export Button Locator
 	private By exportExcelBtn = By.xpath("//button[contains(text(),'Export Excel')]");
-	
+
 	// Message Locator
 	private By noDataMsgLocator = By.xpath("//*[contains(text(),'No data for selected filter')]");
 
@@ -37,8 +39,13 @@ public class PerformancePage {
 
 	public void navigateToPerformance() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement navBtn = wait.until(ExpectedConditions.elementToBeClickable(performanceNavTab));
-		navBtn.click();
+
+		// Navigate to Performance tab or refresh page to clear stale filters from
+		// previous tests
+		driver.navigate().refresh();
+
+		WebElement perfTab = wait.until(ExpectedConditions.elementToBeClickable(performanceNavTab));
+		perfTab.click();
 	}
 
 	public void searchAgent(String agentName) {
@@ -83,20 +90,22 @@ public class PerformancePage {
 		searchBox.sendKeys(teamName);
 
 		// Select specific team option dynamically
-		By teamOptionLocator = By.xpath("//div[contains(@class,'option') and contains(text(),'" + teamName + "')] | //span[contains(text(),'" + teamName + "')] | //div[text()='" + teamName + "']");
+		By teamOptionLocator = By.xpath("//div[contains(@class,'option') and contains(text(),'" + teamName
+				+ "')] | //span[contains(text(),'" + teamName + "')] | //div[text()='" + teamName + "']");
 		WebElement option = wait.until(ExpectedConditions.elementToBeClickable(teamOptionLocator));
 		option.click();
 	}
 
 	public void selectDateFilter(String dateFilterText) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		
+
 		// Click Date dropdown
 		WebElement dateBtn = wait.until(ExpectedConditions.elementToBeClickable(dateDropdownBtn));
 		dateBtn.click();
 
 		// Select Date Filter option dynamically (e.g., 'This Month')
-		By dateOptionLocator = By.xpath("//div[contains(text(),'" + dateFilterText + "') or span[contains(text(),'" + dateFilterText + "')]]");
+		By dateOptionLocator = By.xpath(
+				"//div[contains(text(),'" + dateFilterText + "') or span[contains(text(),'" + dateFilterText + "')]]");
 		WebElement filterOption = wait.until(ExpectedConditions.elementToBeClickable(dateOptionLocator));
 		filterOption.click();
 	}

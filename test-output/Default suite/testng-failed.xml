@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.supporthub.test.ApplyFilterTest">
+      <class name="com.supporthub.test.CreateTicketTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testApplyQuickFilterAndToggleClose"/>
+          <include name="clearAllureResults"/>
+          <include name="testTicketCategorySelectionAndInteractionLogging" invocation-numbers="0"/>
           <include name="setup"/>
+          <include name="captureScreenshotOnFailure"/>
           <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.supporthub.test.ApplyFilterTest -->
+      </class> <!-- com.supporthub.test.CreateTicketTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

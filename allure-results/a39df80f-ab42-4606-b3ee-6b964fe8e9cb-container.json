@@ -1,0 +1,1 @@
+{"uuid":"a39df80f-ab42-4606-b3ee-6b964fe8e9cb","name":"testApplyQuickFilterAndToggleClose","children":["0dc9588c-98e1-4693-a49a-dee59aca19d6"],"befores":[{"name":"getQuickFilterData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1791888051228,"stop":1791888051229}],"afters":[],"start":1791888051228,"stop":1791888132491}

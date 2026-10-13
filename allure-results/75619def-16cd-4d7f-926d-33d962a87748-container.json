@@ -1,1 +1,0 @@
-{"uuid":"75619def-16cd-4d7f-926d-33d962a87748","name":"testBlankMandatoryNameValidation","children":["16546efd-558e-45c6-8def-2450f5835471"],"befores":[{"name":"getBlankNameData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1791787810618,"stop":1791787810619}],"afters":[],"start":1791787810618,"stop":1791787870652}

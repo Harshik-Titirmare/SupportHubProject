@@ -15,7 +15,7 @@ public class CustomerPage {
 	private WebDriver driver;
 	private ActionDriver action;
 
-	// Locators
+	// Locators for navigation and elements
 	private By customersTab = By.xpath(
 			"//*[@id='root']//a[contains(@href,'customers')] | //*[name()='svg' and @data-icon='users'] | //*[contains(@class,'customer')]");
 	private By newCustomerBtn = By.xpath("//button[contains(text(),'New') or contains(text(),'+ New')]");
@@ -33,7 +33,7 @@ public class CustomerPage {
 	// Date of Birth Calendar Icon & Input
 	private By dobCalendarIcon = By.xpath("//input[@type='date']");
 
-	// Other fields (Require scrolling)
+	// Other fields requiring scroll interaction
 	private By addressInput = By.xpath("//input[@placeholder='Street, City']");
 	private By notesInput = By.xpath("//input[@placeholder='Internal notes']");
 	private By cityInput = By.xpath(
@@ -73,56 +73,120 @@ public class CustomerPage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		// 1. Basic Fields
-		wait.until(ExpectedConditions.visibilityOfElementLocated(nameInput)).sendKeys(name);
-		driver.findElement(phoneInput).sendKeys(phone);
-		driver.findElement(emailInput).sendKeys(email);
+		// Helper method lambda or logic to clear and type safely using JS events
+		// 1. Name Field (Can be blank for negative testing)
+		WebElement nameFld = wait.until(ExpectedConditions.visibilityOfElementLocated(nameInput));
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				nameFld);
+		if (name != null && !name.trim().isEmpty()) {
+			nameFld.sendKeys(name);
+		}
 
-		// 2. Country Custom Dropdown Selection
+		// 2. Phone Field
+		WebElement phoneFld = driver.findElement(phoneInput);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				phoneFld);
+		if (phone != null && !phone.trim().isEmpty()) {
+			phoneFld.sendKeys(phone);
+		}
+
+		// 3. Email Field
+		WebElement emailFld = driver.findElement(emailInput);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				emailFld);
+		if (email != null && !email.trim().isEmpty()) {
+			emailFld.sendKeys(email);
+		}
+
+		// 4. Select country from custom dropdown
 		WebElement countryBox = wait.until(ExpectedConditions.elementToBeClickable(countryDropdown));
 		countryBox.click();
 		By countryOption = By.xpath("//div[normalize-space()='" + country + "']");
 		wait.until(ExpectedConditions.elementToBeClickable(countryOption)).click();
 
-		// 3. State / Province
-		driver.findElement(stateInput).sendKeys(state);
+		// 5. Enter state or province
+		WebElement stateFld = driver.findElement(stateInput);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				stateFld);
+		if (state != null && !state.trim().isEmpty()) {
+			stateFld.sendKeys(state);
+		}
 
-		// 4. Source Custom Dropdown Selection
+		// 6. Select source from custom dropdown
 		WebElement sourceBox = wait.until(ExpectedConditions.elementToBeClickable(sourceDropdown));
 		sourceBox.click();
 		By sourceOption = By.xpath("//div[normalize-space()='" + source + "']");
 		wait.until(ExpectedConditions.elementToBeClickable(sourceOption)).click();
 
-		// 5. Date of Birth Calendar Handling
+		// 7. Handle Date of Birth input field
 		WebElement dobField = driver.findElement(dobCalendarIcon);
 		dobField.click();
-		dobField.clear();
-		dobField.sendKeys(dob);
-		dobField.sendKeys(Keys.TAB);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				dobField);
+		if (dob != null && !dob.trim().isEmpty()) {
+			dobField.sendKeys(dob);
+			dobField.sendKeys(Keys.TAB);
+		}
 
-		// 6. Scroll down to Gender, Address, Pincode & Social Media fields
+		// 8. Scroll down to view secondary fields
 		WebElement addressField = wait.until(ExpectedConditions.visibilityOfElementLocated(addressInput));
 		js.executeScript("arguments[0].scrollIntoView(true);", addressField);
 
-		// 7. Gender Radio Button Selection
+		// 9. Select gender radio option safely
 		try {
 			WebElement radio = driver.findElement(By.xpath("//*[text()='" + gender + "']"));
 			radio.click();
 		} catch (Exception e) {
-			System.out.println("Gender selection handled via fallback");
+			System.out.println("Gender selection handled via fallback.");
 		}
 
-		// 8. Address, Notes, City, Pincode & Social Media
-		addressField.sendKeys(address);
-		driver.findElement(notesInput).sendKeys(notes);
+		// 10. Fill secondary fields with strict JS reset
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				addressField);
+		if (address != null && !address.trim().isEmpty()) {
+			addressField.sendKeys(address);
+		}
+
+		WebElement notesFld = driver.findElement(notesInput);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				notesFld);
+		if (notes != null && !notes.trim().isEmpty()) {
+			notesFld.sendKeys(notes);
+		}
 
 		try {
-			driver.findElement(cityInput).sendKeys(city);
+			WebElement cityFld = driver.findElement(cityInput);
+			js.executeScript(
+					"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+					cityFld);
+			if (city != null && !city.trim().isEmpty()) {
+				cityFld.sendKeys(city);
+			}
 		} catch (Exception ignored) {
 		}
 
-		driver.findElement(pincodeInput).sendKeys(pincode);
-		driver.findElement(socialMediaInput).sendKeys(socialMedia);
+		WebElement pincodeFld = driver.findElement(pincodeInput);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				pincodeFld);
+		if (pincode != null && !pincode.trim().isEmpty()) {
+			pincodeFld.sendKeys(pincode);
+		}
+
+		WebElement socialFld = driver.findElement(socialMediaInput);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				socialFld);
+		if (socialMedia != null && !socialMedia.trim().isEmpty()) {
+			socialFld.sendKeys(socialMedia);
+		}
 	}
 
 	public void clickCreateCustomerButton() {
@@ -145,7 +209,6 @@ public class CustomerPage {
 		}
 	}
 
-	// New Toast Message Verification Method
 	public boolean verifyCustomerCreatedToastMessage() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -157,27 +220,10 @@ public class CustomerPage {
 		}
 	}
 
-	// Check if Create Customer button is enabled or disabled
 	public boolean isCreateCustomerButtonEnabled() {
 		try {
 			WebElement createBtn = driver.findElement(createCustomerBtn);
 			return createBtn.isEnabled();
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
-	// Verify Name field validation error or red border highlight
-	public boolean verifyNameFieldError() {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			// Check for HTML5 validation message, error text, or red border on Name input
-			WebElement nameField = driver.findElement(nameInput);
-			String validationMessage = nameField.getAttribute("validationMessage");
-			boolean hasErrorClass = nameField.getAttribute("class").contains("error")
-					|| nameField.getAttribute("class").contains("border-red")
-					|| nameField.getAttribute("style").contains("red");
-			return (validationMessage != null && !validationMessage.isEmpty()) || hasErrorClass;
 		} catch (Exception e) {
 			return false;
 		}
@@ -190,21 +236,20 @@ public class CustomerPage {
 
 	public void uploadCSVFile(String filePath) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		// Clicking dropzone to trigger OS file dialog or sending keys if file input is
-		// present
-		WebElement dropzone = wait.until(ExpectedConditions.elementToBeClickable(dropzoneArea));
-		dropzone.click();
-
-		// Note: For native file chooser dialog in Selenium on Linux/Ubuntu,
-		// you can use Java Robot class or Runtime execution if sendKeys isn't directly
-		// attached to an <input type="file">.
-		// If there is an underlying file input:
 		try {
 			WebElement fileInput = driver.findElement(By.xpath("//input[@type='file']"));
 			fileInput.sendKeys(filePath);
 		} catch (Exception e) {
-			// Fallback for native dialog handling if needed
-			System.out.println("Handled via native file chooser or dropzone interaction.");
+			try {
+				WebElement fileInput = wait
+						.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].style.display='block'; arguments[0].style.visibility='visible';",
+						fileInput);
+				fileInput.sendKeys(filePath);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
@@ -212,8 +257,7 @@ public class CustomerPage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(modalImportBtn)).click();
 	}
-	
-	// Verify Created toast message
+
 	public boolean verifyImportSuccessToast() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -224,7 +268,6 @@ public class CustomerPage {
 		}
 	}
 
-	// Verify Deduplication / Update toast message
 	public boolean verifyCustomerUpdatedToastMessage() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -235,6 +278,4 @@ public class CustomerPage {
 			return false;
 		}
 	}
-	
-	
 }

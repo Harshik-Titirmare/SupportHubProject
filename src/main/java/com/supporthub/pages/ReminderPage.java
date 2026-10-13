@@ -2,6 +2,7 @@ package com.supporthub.pages;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,8 +30,24 @@ public class ReminderPage {
 
 	public void clickFirstTicket() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement ticket = wait.until(ExpectedConditions.elementToBeClickable(firstTicket));
-		ticket.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		// Combined XPath using OR (|) operator for instant checking without loop delay
+		By combinedLocator = By
+				.xpath("(//div[contains(@class,'cursor-pointer') and descendant::span[contains(text(),'TKT-')]])[1] | "
+						+ "(//div[contains(@class,'cursor-pointer')])[1] | "
+						+ "(//div[starts-with(@class,'flex') and descendant::span[contains(text(),'TKT-')]])[1]");
+
+		try {
+			WebElement firstTicket = wait.until(ExpectedConditions.elementToBeClickable(combinedLocator));
+			try {
+				firstTicket.click();
+			} catch (Exception e) {
+				js.executeScript("arguments[0].click();", firstTicket);
+			}
+		} catch (Exception e) {
+			throw new RuntimeException("First ticket in the list could not be found! Reason: " + e.getMessage());
+		}
 	}
 
 	public void clickReminderButton() {
@@ -40,18 +57,30 @@ public class ReminderPage {
 
 	public void fillReminderDetails(String note, String date, String time) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		// Enter Reminder Note
+		// Enter Reminder Note with strict JS force clear and event dispatch
 		WebElement noteField = wait.until(ExpectedConditions.visibilityOfElementLocated(reminderNoteInput));
 		noteField.clear();
-		noteField.sendKeys(note);
+		js.executeScript(
+				"arguments[0].value=''; arguments[0].dispatchEvent(new Event('input', { bubbles: true })); arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
+				noteField);
+
+		if (note != null && !note.trim().isEmpty() && !note.equals("")) {
+			noteField.sendKeys(note);
+			System.out.println("Reminder note entered: " + note);
+		} else {
+			System.out.println("Reminder note is blank for validation test.");
+		}
 
 		// Enter Date
 		WebElement dateField = driver.findElement(reminderDateInput);
+		dateField.clear();
 		dateField.sendKeys(date);
 
 		// Enter Time
 		WebElement timeField = driver.findElement(reminderTimeInput);
+		timeField.clear();
 		timeField.sendKeys(time);
 	}
 
