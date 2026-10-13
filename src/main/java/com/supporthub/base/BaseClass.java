@@ -114,7 +114,7 @@ public class BaseClass {
 			options.addArguments("--disable-popup-blocking");
 
 			// Configure Chrome for headless execution
-//			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
+			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
 			options.addArguments("--no-sandbox"); // necessary when running Chrome as the 'jenkins' service user
 			options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems in shared memory
 																// environments (prevents Chrome crashes)
