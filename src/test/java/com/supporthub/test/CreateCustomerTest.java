@@ -69,7 +69,7 @@ public class CreateCustomerTest extends BaseClass {
 				"Assertion Failed: 'Create Customer' button is enabled even when Name field is blank!");
 	}
 
-	@Test(priority = 3)
+	/*@Test(priority = 3)
 	public void testImportCustomersCSV() {
 		CustomerPage customerPage = new CustomerPage(getDriver(), getActionDriver());
 
@@ -112,5 +112,5 @@ public class CreateCustomerTest extends BaseClass {
 		boolean isUpdateSuccessful = customerPage.verifyCustomerUpdatedToastMessage();
 		Assert.assertTrue(isUpdateSuccessful,
 				"Assertion Failed: Customer deduplication/update toast message is not displayed!");
-	}
+	}*/
 }

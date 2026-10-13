@@ -1,1 +1,0 @@
-{"uuid":"eaad124d-f55e-4c6c-8dfe-592424197344","name":"testTicketCategorySelectionAndInteractionLogging","children":["09439ea9-2ac4-43ca-8a06-6f0c5e680a72"],"befores":[{"name":"getTicketCategoryData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1791888025904,"stop":1791888025905}],"afters":[],"start":1791888025903,"stop":1791888132494}

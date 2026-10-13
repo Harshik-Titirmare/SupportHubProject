@@ -66,13 +66,7 @@ public class BaseClass {
 		}
 	}
 
-	/*
-	 * ==================== SINGLE-SESSION EXECUTION CHANGE ==================== OLD
-	 * CODE: @BeforeMethod(alwaysRun = true) -> Runs setup before EVERY test method.
-	 * NEW CODE: @BeforeClass(alwaysRun = true) -> Runs setup ONLY ONCE per test
-	 * class.
-	 * ===========================================================================
-	 */
+	
 	@BeforeClass(alwaysRun = true)
 	public synchronized void setup() throws IOException {
 		try {
@@ -120,7 +114,7 @@ public class BaseClass {
 			options.addArguments("--disable-popup-blocking");
 
 			// Configure Chrome for headless execution
-			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
+//			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
 			options.addArguments("--no-sandbox"); // necessary when running Chrome as the 'jenkins' service user
 			options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems in shared memory
 																// environments (prevents Chrome crashes)

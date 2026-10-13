@@ -1,1 +1,0 @@
-{"uuid":"ae48637c-afbe-4ca3-af46-fc268a02a146","name":"testSetTicketReminder","children":["3cff8317-4ce9-4503-84df-9314ee92d5d1"],"befores":[{"name":"getReminderData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1791888114561,"stop":1791888114561}],"afters":[],"start":1791888114561,"stop":1791888132500}
