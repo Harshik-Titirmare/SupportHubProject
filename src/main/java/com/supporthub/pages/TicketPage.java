@@ -16,7 +16,7 @@ public class TicketPage {
 	private ActionDriver action;
 
 	// ==================== LOCATORS ====================
-	private By newTicketBtn = By.xpath("//*[@id='root']/div[2]/div[1]/div[2]/main/div/div[2]/div[2]/div/button[3]");
+	private By newTicketBtn = By.xpath("//*[@id='root']/div[2]/div[1]/div[2]/main/div/div[2]/div[2]/div/button[4]");
 	private By searchBox = By.xpath("//input[contains(@placeholder,'Search subject')]");
 
 	// Post-Creation Verification Locators

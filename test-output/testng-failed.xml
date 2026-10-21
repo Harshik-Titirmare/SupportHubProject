@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [SupportHubSuite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.supporthub.listeners.AllureListener"/>
-  </listeners>
-  <test thread-count="5" name="SupportHub Regression Suite(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.supporthub.test.ReminderTest">
+      <class name="com.supporthub.test.CreateTicketTest">
         <methods>
           <include name="tearDown"/>
           <include name="clearAllureResults"/>
+          <include name="testTicketCategorySelectionAndInteractionLogging" invocation-numbers="0"/>
+          <include name="testCreateTicketWithValidCustomer" invocation-numbers="0 1 2"/>
           <include name="setup"/>
-          <include name="testSetTicketReminder" invocation-numbers="0"/>
+          <include name="testCreateTicketValidationOnMissingFields"/>
           <include name="captureScreenshotOnFailure"/>
           <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.supporthub.test.ReminderTest -->
+      </class> <!-- com.supporthub.test.CreateTicketTest -->
     </classes>
-  </test> <!-- SupportHub Regression Suite(failed) -->
-</suite> <!-- Failed suite [SupportHubSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

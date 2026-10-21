@@ -1,1 +1,0 @@
-{"uuid":"2b13aaf7-12fc-413a-b5ef-818860efe4dc","name":"testSearchAgentInPerformanceGrid","children":["2998ebbc-489f-45c8-86b8-13e5f2fadf1c"],"befores":[{"name":"getAgentSearchData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1792565038677,"stop":1792565038677}],"afters":[],"start":1792565038677,"stop":1792565043565}
