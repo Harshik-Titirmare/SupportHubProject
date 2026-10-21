@@ -83,6 +83,26 @@ public class NewTicketModalPage {
 		System.out.println("Clicked on Create Ticket button.");
 	}
 
+	// Bulletproof method to wait for and extract Ticket ID from the success toast
+
+	private By toastTicketIDLocator = By.xpath("//li[@role='status']//*[contains(text(),'TKT-')]");
+
+	public String getCreatedTicketIDFromToast() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
+			WebElement idElement = wait.until(ExpectedConditions.visibilityOfElementLocated(toastTicketIDLocator));
+
+			String ticketID = idElement.getText().trim();
+			System.out.println("Debug - Directly Extracted Ticket ID from XPath: " + ticketID);
+
+			return ticketID;
+		} catch (Exception e) {
+			System.out.println("Exception in getCreatedTicketIDFromToast: " + e.getMessage());
+			return "";
+		}
+	}
+
 	public boolean isCustomerRequiredErrorDisplayed() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -104,16 +124,18 @@ public class NewTicketModalPage {
 
 	public boolean isTicketCreatedToastDisplayed() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-			return wait.until(ExpectedConditions.visibilityOfElementLocated(ticketCreatedSuccessToast)).isDisplayed();
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+			WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(ticketCreatedSuccessToast));
+			String toastText = toast.getText();
+			return toast.isDisplayed() && toastText.contains("Ticket created");
 		} catch (Exception e) {
 			return false;
 		}
 	}
 
 	// Locator for the Cancel button in New Ticket Modal
-		private By cancelModalBtn = By.xpath("//button[normalize-space()='Cancel']");
-		
+	private By cancelModalBtn = By.xpath("//button[normalize-space()='Cancel']");
+
 	// Method to click Cancel button and close the modal
 	public void clickCancelButton() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

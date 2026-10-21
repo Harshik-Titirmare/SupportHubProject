@@ -1,6 +1,9 @@
 package com.supporthub.pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -9,6 +12,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.supporthub.actiondriver.ActionDriver;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class CustomerPage {
 
@@ -209,6 +215,58 @@ public class CustomerPage {
 		}
 	}
 
+	// Locator for the customer search input box
+	private By customerSearchBox = By.xpath("//input[@placeholder='Search…']");
+
+	// Method to type the phone number into the search box
+	public void searchCustomerByPhone(String phone) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement searchBox = wait.until(ExpectedConditions.elementToBeClickable(customerSearchBox));
+		
+		try {
+			Thread.sleep(1);
+			searchBox.clear();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		searchBox.sendKeys(phone);
+
+	}
+
+	// Method to verify that EXACTLY ONE customer appears in the list and matches
+	// the expected name
+	public boolean verifySingleCustomerAndName(String expectedName) {
+		try {
+			Thread.sleep(2000);
+
+			// Target all customer list buttons in the left sidebar
+			List<WebElement> customerButtons = driver
+					.findElements(By.xpath("//div[contains(@class, 'overflow-y-auto')]//button"));
+
+			if (customerButtons.isEmpty()) {
+				customerButtons = driver.findElements(By.xpath("//aside//button[contains(@class, 'border-b')]"));
+			}
+
+			int matchingCustomerCards = 0;
+
+			for (int i = 0; i < customerButtons.size(); i++) {
+				String text = customerButtons.get(i).getText().trim();
+				if (!text.isEmpty()) {
+					if (text.contains(expectedName)) {
+						matchingCustomerCards++;
+					}
+				}
+			}
+
+			return matchingCustomerCards == 1;
+
+		} catch (Exception e) {
+			System.out.println("Exception in verifySingleCustomerAndName: " + e.getMessage());
+			return false;
+		}
+	}
+
 	public boolean verifyCustomerCreatedToastMessage() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -261,7 +319,10 @@ public class CustomerPage {
 	public boolean verifyImportSuccessToast() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(importSuccessToast));
+			// Dynamically check for 'Import complete' and 'created' so it works for 1 or
+			// multiple rows
+			WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath("//*[contains(text(),'Import complete') and contains(text(),'created')]")));
 			return toast.isDisplayed();
 		} catch (Exception e) {
 			return false;
@@ -277,5 +338,24 @@ public class CustomerPage {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	// CSV se data read karne ke liye method
+	public List<String[]> getAllCustomersFromCSV(String filePath) {
+		List<String[]> customerList = new ArrayList<>();
+		try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+			String line = br.readLine(); // Header line skip karne ke liye
+			while ((line = br.readLine()) != null) { // Jab tak saari rows khatam na ho jayein
+				String[] values = line.split(",");
+				if (values.length >= 3) {
+					String name = values[0].trim(); // Column A: Name
+					String phone = values[2].trim(); // Column C: Phone
+					customerList.add(new String[] { name, phone });
+				}
+			}
+		} catch (IOException e) {
+			System.out.println("Error reading CSV file: " + e.getMessage());
+		}
+		return customerList;
 	}
 }

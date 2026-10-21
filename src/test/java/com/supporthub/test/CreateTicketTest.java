@@ -9,27 +9,42 @@ import com.supporthub.pages.TicketPage;
 
 public class CreateTicketTest extends BaseClass {
 
-	@Test(priority = 1)
-	public void testCreateTicketWithValidCustomer() {
+	@Test(priority = 1, dataProvider = "ticketDataProvider", dataProviderClass = com.supporthub.dataprovider.CreateTicketDataProvider.class)
+	public void testCreateTicketWithValidCustomer(String customerName, String subject) {
 
 		TicketPage ticketPage = new TicketPage(getDriver(), getActionDriver());
 
-		// 1. Click '+' (New Ticket) button on Ticket Page to open Modal
+		// Step 1: Click '+' (New Ticket) button on Ticket Page to open the modal
 		ticketPage.clickNewTicketButton();
 
-		// 2. Fill and submit details inside the New Ticket Modal
+		// Step 2: Fill details dynamically using Data Provider values
 		NewTicketModalPage modalPage = new NewTicketModalPage(getDriver(), getActionDriver());
-		modalPage.selectCustomerFromDropdown("Falguni");
-		modalPage.enterSubject("Test Issue for Late Delivery");
+		modalPage.selectCustomerFromDropdown(customerName);
+		modalPage.enterSubject(subject);
 		modalPage.clickCreateTicket();
 
-		// 3. Assertions
+		// Step 3: Check mandatory customer validation error
 		boolean isErrorPresent = modalPage.isCustomerRequiredErrorDisplayed();
 		Assert.assertFalse(isErrorPresent, "Ticket creation failed! 'Customer is required' error toast was displayed.");
 
-		boolean isSuccessToastDisplayed = modalPage.isTicketCreatedToastDisplayed();
-		Assert.assertTrue(isSuccessToastDisplayed,
-				"Ticket creation confirmation failed! 'Ticket created' toast was not displayed.");
+		// Step 4: Extract Ticket ID directly from the success toast notification via
+		// XPath
+		String toastTicketID = modalPage.getCreatedTicketIDFromToast();
+		Assert.assertFalse(toastTicketID.isEmpty(),
+				"Assertion Failed: Could not extract Ticket ID from 'Ticket created' success toast!");
+
+		// Step 5: Retrieve active ticket ID from the detail header view
+		String headerTicketID = ticketPage.getActiveTicketIDFromHeader();
+		Assert.assertFalse(headerTicketID.isEmpty(), "Assertion Failed: Header Ticket ID is empty!");
+
+		// Step 6: STRICT CROSS-VERIFICATION (Toast ID vs Header ID)
+		Assert.assertEquals(headerTicketID, toastTicketID, "Assertion Failed: Header Ticket ID (" + headerTicketID
+				+ ") does not match Toast Ticket ID (" + toastTicketID + ")!");
+
+		// Step 8: Verify customer name dynamically on the ticket panel
+		boolean isCustomerMatched = ticketPage.isCustomerNameMatching(customerName);
+		Assert.assertTrue(isCustomerMatched, "Assertion Failed: Customer name '" + customerName
+				+ "' does not match or is missing on the ticket panel!");
 	}
 
 	@Test(priority = 2)
@@ -77,8 +92,34 @@ public class CreateTicketTest extends BaseClass {
 		// Step 6: Fill manual interaction note and click 'Log Interaction'
 		ticketPage.fillInteractionNotesAndLog(interactionNote);
 
-		// Verification: Verify success toast message ("Interaction logged")
+		// Verification 1: Verify success toast message ("Interaction logged")
 		boolean isToastDisplayed = ticketPage.verifyInteractionLoggedToast();
 		Assert.assertTrue(isToastDisplayed, "Assertion Failed: 'Interaction logged' toast message is not displayed!");
+
+		// === NEW VERIFICATION FLOW FOR CLOSED TICKET ===
+
+		// Step 7: Copy/Get the Ticket ID from the active detail header view
+		String copiedTicketID = ticketPage.getActiveTicketIDFromHeader();
+		Assert.assertFalse(copiedTicketID.isEmpty(),
+				"Assertion Failed: Header Ticket ID is empty, cannot verify closed ticket!");
+		// Step 8: Click Pin sidebar
+		ticketPage.clickPinSidebar();
+		// Step 9: Click on the 'Closed' tab from the left sidebar view
+		ticketPage.clickClosedTab();
+
+		// Step 10: Search the copied Ticket ID in the search bar
+		ticketPage.searchTicketByID(copiedTicketID);
+
+		// Step 10: Verify that the ticket is successfully found under the Closed
+		// section with matching ID
+		boolean isTicketFound = ticketPage.verifySearchedTicketID(copiedTicketID);
+		Assert.assertTrue(isTicketFound,
+				"Assertion Failed: Closed ticket with ID '" + copiedTicketID + "' was not found in the Closed list!");
+
+		// Step 11: Verify that the ticket status in the list is strictly 'CLOSED'
+		boolean isClosedStatus = ticketPage.isTicketStatusClosedInList();
+		Assert.assertTrue(isClosedStatus,
+				"Assertion Failed: Ticket status is not 'CLOSED'! It might be Open or Pending.");
+
 	}
 }

@@ -6,16 +6,16 @@
   </listeners>
   <test thread-count="5" name="SupportHub Regression Suite(failed)">
     <classes>
-      <class name="com.supporthub.test.ApplyFilterTest">
+      <class name="com.supporthub.test.ReminderTest">
         <methods>
           <include name="tearDown"/>
           <include name="clearAllureResults"/>
           <include name="setup"/>
-          <include name="testSearchTicketById" invocation-numbers="0"/>
+          <include name="testSetTicketReminder" invocation-numbers="0"/>
           <include name="captureScreenshotOnFailure"/>
           <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.supporthub.test.ApplyFilterTest -->
+      </class> <!-- com.supporthub.test.ReminderTest -->
     </classes>
   </test> <!-- SupportHub Regression Suite(failed) -->
 </suite> <!-- Failed suite [SupportHubSuite] -->

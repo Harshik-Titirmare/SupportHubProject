@@ -9,9 +9,9 @@ public class CustomerDataProvider {
         return new Object[][] {
             // Positive Test Data (TC_CUST_001)
             { 
-                "Vivek Verma", "9876543217", "vivek.verma@example.com", 
+                "Ajit Doval", "9816373149", "ajit.doval@example.com", 
                 "India", "Maharashtra", "Social Media", "12/15/1995", 
-                "Male", "MG Road", "VIP Customer", "Nagpur", "440001", "@vivek_verma" 
+                "Male", "MG Road", "VIP Customer", "Pune", "440001", "@ajit_doval" 
             }
         };
     }
@@ -21,7 +21,7 @@ public class CustomerDataProvider {
     public static Object[][] getBlankNameData() {
         return new Object[][] {
             { 
-                "", "9876543217", "blanks.name@example.com", 
+                "", "9876523239", "blanks.name@example.com", 
                 "India", "Maharashtra", "Social Media", "12/15/1995", 
                 "Male", "MG Road", "Test Notes", "Nagpur", "440001", "@test" 
             }

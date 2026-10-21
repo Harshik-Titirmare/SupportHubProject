@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>SupportHub Regression Suite</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>16/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>19/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 13 17:00:32 IST 2026</td>
+<td>Started on:</td><td>Wed Oct 21 12:11:37 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>127 seconds (127597 ms)</td>
+<tr><td>Total time:</td><td>145 seconds (145665 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,57 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.supporthub.test.ApplyFilterTest.testSearchTicketById()'><b>testSearchTicketById</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: TKT-261012-231453</td>
-<td><div><pre>java.lang.AssertionError: Assertion Failed: Ticket TKT-261012-231453 is not displayed in the filtered list! expected [true] but found [false]
-	at com.supporthub.test.ApplyFilterTest.testSearchTicketById(ApplyFilterTest.java:76)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace865430810", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace865430810'><pre>java.lang.AssertionError: Assertion Failed: Ticket TKT-261012-231453 is not displayed in the filtered list! expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertTrue(Assert.java:57)
-	at com.supporthub.test.ApplyFilterTest.testSearchTicketById(ApplyFilterTest.java:76)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>10</td>
-<td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -127,85 +76,100 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.supporthub.test.CreateCustomerTest.testBlankMandatoryNameValidation()'><b>testBlankMandatoryNameValidation</b><br>Test class: com.supporthub.test.CreateCustomerTest<br>Parameters: , 9876543217, blanks.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, Test Notes, Nagpur, 440001, @test</td>
+<td title='com.supporthub.test.ApplyFilterTest.testCreateAndSaveGlobalFilterViewShortcut()'><b>testCreateAndSaveGlobalFilterViewShortcut</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: High Priority, Open, High</td>
 <td></td>
-<td>5</td>
-<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
-<tr>
-<td title='com.supporthub.test.ApplyFilterTest.testApplyQuickFilterAndToggleClose()'><b>testApplyQuickFilterAndToggleClose</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: Open, Urgent</td>
-<td></td>
-<td>1</td>
+<td>6</td>
 <td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
-<tr>
-<td title='com.supporthub.test.ReminderTest.testBlankReminderNoteValidation()'><b>testBlankReminderNoteValidation</b><br>Test class: com.supporthub.test.ReminderTest<br>Parameters: , 10-18-2026, 07:50PM</td>
-<td></td>
-<td>2</td>
-<td>com.supporthub.test.ReminderTest@5b38c1ec</td></tr>
-<tr>
-<td title='com.supporthub.test.PerformanceTest.testSearchAgentInPerformanceGrid()'><b>testSearchAgentInPerformanceGrid</b><br>Test class: com.supporthub.test.PerformanceTest<br>Parameters: Harshik, Harshik Titirmare</td>
-<td></td>
-<td>2</td>
-<td>com.supporthub.test.PerformanceTest@338fc1d8</td></tr>
-<tr>
-<td title='com.supporthub.test.PerformanceTest.testExportExcelReportGeneration()'><b>testExportExcelReportGeneration</b><br>Test class: com.supporthub.test.PerformanceTest<br>Parameters: Chat support, This Month</td>
-<td></td>
-<td>2</td>
-<td>com.supporthub.test.PerformanceTest@338fc1d8</td></tr>
-<tr>
-<td title='com.supporthub.test.CreateTicketTest.testTicketCategorySelectionAndInteractionLogging()'><b>testTicketCategorySelectionAndInteractionLogging</b><br>Test class: com.supporthub.test.CreateTicketTest<br>Parameters: Order Issues, Order Details, order details incorrect, Closed, Customer confirmed issue is resolved via callback.</td>
-<td></td>
-<td>16</td>
-<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
-<tr>
-<td title='com.supporthub.test.CreateCustomerTest.testCustomerDeduplicationViaCSV()'><b>testCustomerDeduplicationViaCSV</b><br>Test class: com.supporthub.test.CreateCustomerTest</td>
-<td></td>
-<td>0</td>
-<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
-<tr>
-<td title='com.supporthub.test.ApplyFilterTest.testCreateAndSaveCustomFilterViewShortcut()'><b>testCreateAndSaveCustomFilterViewShortcut</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: shortcut open filter, Open, Urgent</td>
-<td></td>
-<td>7</td>
-<td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
-<tr>
-<td title='com.supporthub.test.CreateCustomerTest.testCreateNewCustomer()'><b>testCreateNewCustomer</b><br>Test class: com.supporthub.test.CreateCustomerTest<br>Parameters: Vivek Verma, 9876543217, vivek.verma@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, VIP Customer, Nagpur, 440001, @vivek_verma</td>
-<td></td>
-<td>5</td>
-<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
 <tr>
 <td title='com.supporthub.test.ApplyFilterTest.testSearchWithNonMatchingFilterCriteria()'><b>testSearchWithNonMatchingFilterCriteria</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: Logistics Support required</td>
 <td></td>
 <td>1</td>
 <td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
 <tr>
-<td title='com.supporthub.test.CreateTicketTest.testCreateTicketValidationOnMissingFields()'><b>testCreateTicketValidationOnMissingFields</b><br>Test class: com.supporthub.test.CreateTicketTest</td>
+<td title='com.supporthub.test.ApplyFilterTest.testCreateAndSaveCustomFilterViewShortcut()'><b>testCreateAndSaveCustomFilterViewShortcut</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: shortcut open filter, Open, High</td>
 <td></td>
-<td>5</td>
-<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
+<td>8</td>
+<td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
 <tr>
-<td title='com.supporthub.test.CreateTicketTest.testCreateTicketWithValidCustomer()'><b>testCreateTicketWithValidCustomer</b><br>Test class: com.supporthub.test.CreateTicketTest</td>
+<td title='com.supporthub.test.ApplyFilterTest.testApplyQuickFilterAndToggleClose()'><b>testApplyQuickFilterAndToggleClose</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: Open, Urgent</td>
 <td></td>
-<td>6</td>
-<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
+<td>2</td>
+<td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
 <tr>
-<td title='com.supporthub.test.CreateCustomerTest.testImportCustomersCSV()'><b>testImportCustomersCSV</b><br>Test class: com.supporthub.test.CreateCustomerTest</td>
-<td></td>
-<td>0</td>
-<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
-<tr>
-<td title='com.supporthub.test.ApplyFilterTest.testCreateAndSaveGlobalFilterViewShortcut()'><b>testCreateAndSaveGlobalFilterViewShortcut</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: High Priority, Open, High</td>
+<td title='com.supporthub.test.ApplyFilterTest.testSearchTicketById()'><b>testSearchTicketById</b><br>Test class: com.supporthub.test.ApplyFilterTest<br>Parameters: TKT-261018-274737</td>
 <td></td>
 <td>3</td>
 <td>com.supporthub.test.ApplyFilterTest@5b799640</td></tr>
 <tr>
-<td title='com.supporthub.test.ReminderTest.testSetTicketReminder()'><b>testSetTicketReminder</b><br>Test class: com.supporthub.test.ReminderTest<br>Parameters: Follow up on payment callback, 10-18-2026, 07:50PM</td>
+<td title='com.supporthub.test.PerformanceTest.testSearchAgentInPerformanceGrid()'><b>testSearchAgentInPerformanceGrid</b><br>Test class: com.supporthub.test.PerformanceTest<br>Parameters: Harshik, Harshik Titirmare</td>
 <td></td>
-<td>3</td>
+<td>1</td>
+<td>com.supporthub.test.PerformanceTest@338fc1d8</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateCustomerTest.testImportCustomersCSV()'><b>testImportCustomersCSV</b><br>Test class: com.supporthub.test.CreateCustomerTest</td>
+<td></td>
+<td>5</td>
+<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateCustomerTest.testCreateNewCustomer()'><b>testCreateNewCustomer</b><br>Test class: com.supporthub.test.CreateCustomerTest<br>Parameters: Ajit Doval, 9816373149, ajit.doval@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, VIP Customer, Pune, 440001, @ajit_doval</td>
+<td></td>
+<td>7</td>
+<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateTicketTest.testTicketCategorySelectionAndInteractionLogging()'><b>testTicketCategorySelectionAndInteractionLogging</b><br>Test class: com.supporthub.test.CreateTicketTest<br>Parameters: Order Issues, Order Details, order details incorrect, Closed, Customer confirmed issue is resolved via callback.</td>
+<td></td>
+<td>20</td>
+<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateTicketTest.testCreateTicketWithValidCustomer()'><b>testCreateTicketWithValidCustomer</b><br>Test class: com.supporthub.test.CreateTicketTest<br>Parameters: Priya Verma, Login OTP Not Received</td>
+<td></td>
+<td>6</td>
+<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateCustomerTest.testBlankMandatoryNameValidation()'><b>testBlankMandatoryNameValidation</b><br>Test class: com.supporthub.test.CreateCustomerTest<br>Parameters: , 9876523239, blanks.name@example.com, India, Maharashtra, Social Media, 12/15/1995, Male, MG Road, Test Notes, Nagpur, 440001, @test</td>
+<td></td>
+<td>5</td>
+<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateCustomerTest.testCustomerDeduplicationViaCSV()'><b>testCustomerDeduplicationViaCSV</b><br>Test class: com.supporthub.test.CreateCustomerTest</td>
+<td></td>
+<td>0</td>
+<td>com.supporthub.test.CreateCustomerTest@6cb107fd</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateTicketTest.testCreateTicketValidationOnMissingFields()'><b>testCreateTicketValidationOnMissingFields</b><br>Test class: com.supporthub.test.CreateTicketTest</td>
+<td></td>
+<td>4</td>
+<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
+<tr>
+<td title='com.supporthub.test.ReminderTest.testBlankReminderNoteValidation()'><b>testBlankReminderNoteValidation</b><br>Test class: com.supporthub.test.ReminderTest<br>Parameters: , 10-18-2026, 07:50PM</td>
+<td></td>
+<td>1</td>
+<td>com.supporthub.test.ReminderTest@5b38c1ec</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateTicketTest.testCreateTicketWithValidCustomer()'><b>testCreateTicketWithValidCustomer</b><br>Test class: com.supporthub.test.CreateTicketTest<br>Parameters: Falguni, Test Issue for Late Delivery</td>
+<td></td>
+<td>6</td>
+<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
+<tr>
+<td title='com.supporthub.test.PerformanceTest.testExportExcelReportGeneration()'><b>testExportExcelReportGeneration</b><br>Test class: com.supporthub.test.PerformanceTest<br>Parameters: Chat support, This Month</td>
+<td></td>
+<td>1</td>
+<td>com.supporthub.test.PerformanceTest@338fc1d8</td></tr>
+<tr>
+<td title='com.supporthub.test.ReminderTest.testSetTicketReminder()'><b>testSetTicketReminder</b><br>Test class: com.supporthub.test.ReminderTest<br>Parameters: Follow up on payment callback, 10-28-2026, 07:50PM</td>
+<td></td>
+<td>4</td>
 <td>com.supporthub.test.ReminderTest@5b38c1ec</td></tr>
 <tr>
 <td title='com.supporthub.test.PerformanceTest.testSearchNonExistingAgentInPerformanceGrid()'><b>testSearchNonExistingAgentInPerformanceGrid</b><br>Test class: com.supporthub.test.PerformanceTest<br>Parameters: XYZTest</td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>com.supporthub.test.PerformanceTest@338fc1d8</td></tr>
+<tr>
+<td title='com.supporthub.test.CreateTicketTest.testCreateTicketWithValidCustomer()'><b>testCreateTicketWithValidCustomer</b><br>Test class: com.supporthub.test.CreateTicketTest<br>Parameters: Rahul Sharma, Payment Gateway Failure Issue</td>
+<td></td>
+<td>6</td>
+<td>com.supporthub.test.CreateTicketTest@4007f65e</td></tr>
 </table><p>
 </body>
 </html>

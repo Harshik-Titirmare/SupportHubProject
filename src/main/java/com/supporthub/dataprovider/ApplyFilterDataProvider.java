@@ -11,7 +11,7 @@ public class ApplyFilterDataProvider {
 
 	@DataProvider(name = "customViewFilterData")
 	public static Object[][] getCustomViewFilterData() {
-		return new Object[][] { { "shortcut open filter", "Open", "Urgent" } };
+		return new Object[][] { { "shortcut open filter", "Open", "High" } };
 	}
 
 	@DataProvider(name = "nonMatchingFilterData")
@@ -21,7 +21,7 @@ public class ApplyFilterDataProvider {
 
 	@DataProvider(name = "searchTicketData")
 	public static Object[][] getSearchTicketData() {
-		return new Object[][] { { "TKT-261013-241241" } };
+		return new Object[][] { { "TKT-261018-274737" } };
 	}
 
 	@DataProvider(name = "globalViewFilterData")

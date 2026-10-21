@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="clearAllureResults"/>
-          <include name="testTicketCategorySelectionAndInteractionLogging" invocation-numbers="0"/>
+          <include name="testCreateTicketWithValidCustomer" invocation-numbers="2"/>
           <include name="setup"/>
           <include name="captureScreenshotOnFailure"/>
           <include name="loadConfig"/>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="17" passed="16" failed="1" skipped="0">
+<testng-results ignored="0" total="19" passed="19" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-10-13T17:00:32 IST" name="SupportHubSuite" finished-at="2026-10-13T17:02:40 IST" duration-ms="127597">
+  <suite started-at="2026-10-21T12:11:37 IST" name="SupportHubSuite" finished-at="2026-10-21T12:14:03 IST" duration-ms="145665">
     <groups>
     </groups>
-    <test started-at="2026-10-13T17:00:32 IST" name="SupportHub Regression Suite" finished-at="2026-10-13T17:02:40 IST" duration-ms="127597">
+    <test started-at="2026-10-21T12:11:37 IST" name="SupportHub Regression Suite" finished-at="2026-10-21T12:14:03 IST" duration-ms="145665">
       <class name="com.supporthub.test.ReminderTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-13T17:02:13 IST" name="setup" finished-at="2026-10-13T17:02:20 IST" duration-ms="7660" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-21T12:13:37 IST" name="setup" finished-at="2026-10-21T12:13:44 IST" duration-ms="7579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testSetTicketReminder(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-13T17:02:21 IST" name="testSetTicketReminder" data-provider="reminderData" finished-at="2026-10-13T17:02:24 IST" duration-ms="3037" status="PASS">
+        <test-method signature="testSetTicketReminder(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-21T12:13:44 IST" name="testSetTicketReminder" data-provider="reminderData" finished-at="2026-10-21T12:13:49 IST" duration-ms="4690" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -20,7 +20,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[10-18-2026]]>
+                <![CDATA[10-28-2026]]>
               </value>
             </param>
             <param index="2">
@@ -32,7 +32,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetTicketReminder -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-13T17:02:24 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:24 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-21T12:13:49 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:49 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -43,7 +43,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testBlankReminderNoteValidation(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-13T17:02:24 IST" name="testBlankReminderNoteValidation" data-provider="blankReminderNoteData" finished-at="2026-10-13T17:02:26 IST" duration-ms="2011" status="PASS">
+        <test-method signature="testBlankReminderNoteValidation(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-21T12:13:49 IST" name="testBlankReminderNoteValidation" data-provider="blankReminderNoteData" finished-at="2026-10-21T12:13:51 IST" duration-ms="1625" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -64,7 +64,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBlankReminderNoteValidation -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-13T17:02:26 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:26 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-21T12:13:51 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:51 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,44 +75,110 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-13T17:02:26 IST" name="tearDown" finished-at="2026-10-13T17:02:26 IST" duration-ms="215" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.ReminderTest@5b38c1ec]" started-at="2026-10-21T12:13:51 IST" name="tearDown" finished-at="2026-10-21T12:13:51 IST" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.supporthub.test.ReminderTest -->
       <class name="com.supporthub.test.CreateTicketTest">
-        <test-method is-config="true" signature="clearAllureResults()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:32 IST" name="clearAllureResults" finished-at="2026-10-13T17:00:32 IST" duration-ms="26" status="PASS">
+        <test-method is-config="true" signature="clearAllureResults()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:11:37 IST" name="clearAllureResults" finished-at="2026-10-21T12:11:37 IST" duration-ms="39" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearAllureResults -->
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:32 IST" name="loadConfig" finished-at="2026-10-13T17:00:32 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:11:37 IST" name="loadConfig" finished-at="2026-10-21T12:11:37 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:32 IST" name="setup" finished-at="2026-10-13T17:00:41 IST" duration-ms="8370" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:11:37 IST" name="setup" finished-at="2026-10-21T12:11:46 IST" duration-ms="8631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testCreateTicketWithValidCustomer()[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:41 IST" name="testCreateTicketWithValidCustomer" finished-at="2026-10-13T17:00:47 IST" duration-ms="6182" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreateTicketWithValidCustomer -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:47 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:00:47 IST" duration-ms="4" status="PASS">
+        <test-method signature="testCreateTicketWithValidCustomer(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:11:46 IST" name="testCreateTicketWithValidCustomer" data-provider="ticketDataProvider" finished-at="2026-10-21T12:11:53 IST" duration-ms="6720" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCreateTicketWithValidCustomer status=SUCCESS method=CreateTicketTest.testCreateTicketWithValidCustomer()[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e] output={null}]]]>
+                <![CDATA[Falguni]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test Issue for Late Delivery]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateTicketWithValidCustomer -->
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:11:53 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:11:53 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCreateTicketWithValidCustomer status=SUCCESS method=CreateTicketTest.testCreateTicketWithValidCustomer(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testCreateTicketValidationOnMissingFields()[pri:2, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:47 IST" name="testCreateTicketValidationOnMissingFields" finished-at="2026-10-13T17:00:52 IST" duration-ms="5151" status="PASS">
+        <test-method signature="testCreateTicketWithValidCustomer(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:11:53 IST" name="testCreateTicketWithValidCustomer" data-provider="ticketDataProvider" finished-at="2026-10-21T12:12:00 IST" duration-ms="6825" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Rahul Sharma]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Payment Gateway Failure Issue]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateTicketWithValidCustomer -->
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:00 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:00 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCreateTicketWithValidCustomer status=SUCCESS method=CreateTicketTest.testCreateTicketWithValidCustomer(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshotOnFailure -->
+        <test-method signature="testCreateTicketWithValidCustomer(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:00 IST" name="testCreateTicketWithValidCustomer" data-provider="ticketDataProvider" finished-at="2026-10-21T12:12:06 IST" duration-ms="6442" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Priya Verma]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Login OTP Not Received]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateTicketWithValidCustomer -->
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:06 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:06 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testCreateTicketWithValidCustomer status=SUCCESS method=CreateTicketTest.testCreateTicketWithValidCustomer(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateTicketTest@4007f65e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshotOnFailure -->
+        <test-method signature="testCreateTicketValidationOnMissingFields()[pri:2, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:06 IST" name="testCreateTicketValidationOnMissingFields" finished-at="2026-10-21T12:12:11 IST" duration-ms="4978" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateTicketValidationOnMissingFields -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:52 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:00:52 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:11 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:11 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -123,7 +189,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testTicketCategorySelectionAndInteractionLogging(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:00:52 IST" name="testTicketCategorySelectionAndInteractionLogging" data-provider="ticketCategoryInteractionData" finished-at="2026-10-13T17:01:09 IST" duration-ms="16894" status="PASS">
+        <test-method signature="testTicketCategorySelectionAndInteractionLogging(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:11 IST" name="testTicketCategorySelectionAndInteractionLogging" data-provider="ticketCategoryInteractionData" finished-at="2026-10-21T12:12:32 IST" duration-ms="20871" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -154,7 +220,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTicketCategorySelectionAndInteractionLogging -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:01:09 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:09 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:32 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:32 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -165,31 +231,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-13T17:01:09 IST" name="tearDown" finished-at="2026-10-13T17:01:09 IST" duration-ms="218" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.CreateTicketTest@4007f65e]" started-at="2026-10-21T12:12:32 IST" name="tearDown" finished-at="2026-10-21T12:12:32 IST" duration-ms="191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.supporthub.test.CreateTicketTest -->
       <class name="com.supporthub.test.CreateCustomerTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:01:43 IST" name="setup" finished-at="2026-10-13T17:01:51 IST" duration-ms="7709" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:01 IST" name="setup" finished-at="2026-10-21T12:13:09 IST" duration-ms="8118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testCreateNewCustomer(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:01:51 IST" name="testCreateNewCustomer" data-provider="addCustomerData" finished-at="2026-10-13T17:01:57 IST" duration-ms="5624" status="PASS">
+        <test-method signature="testCreateNewCustomer(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:09 IST" name="testCreateNewCustomer" data-provider="addCustomerData" finished-at="2026-10-21T12:13:17 IST" duration-ms="7555" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Vivek Verma]]>
+                <![CDATA[Ajit Doval]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[9876543217]]>
+                <![CDATA[9816373149]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[vivek.verma@example.com]]>
+                <![CDATA[ajit.doval@example.com]]>
               </value>
             </param>
             <param index="3">
@@ -229,7 +295,7 @@
             </param>
             <param index="10">
               <value>
-                <![CDATA[Nagpur]]>
+                <![CDATA[Pune]]>
               </value>
             </param>
             <param index="11">
@@ -239,18 +305,18 @@
             </param>
             <param index="12">
               <value>
-                <![CDATA[@vivek_verma]]>
+                <![CDATA[@ajit_doval]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateNewCustomer -->
-        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:01:57 IST" name="cleanUpAfterMethod" finished-at="2026-10-13T17:01:59 IST" duration-ms="2075" status="PASS">
+        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:17 IST" name="cleanUpAfterMethod" finished-at="2026-10-21T12:13:19 IST" duration-ms="2072" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpAfterMethod -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:01:59 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:59 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:19 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:19 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -261,7 +327,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testBlankMandatoryNameValidation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:01:59 IST" name="testBlankMandatoryNameValidation" data-provider="blankNameCustomerData" finished-at="2026-10-13T17:02:05 IST" duration-ms="5889" status="PASS">
+        <test-method signature="testBlankMandatoryNameValidation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:19 IST" name="testBlankMandatoryNameValidation" data-provider="blankNameCustomerData" finished-at="2026-10-21T12:13:24 IST" duration-ms="5463" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -270,7 +336,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[9876543217]]>
+                <![CDATA[9876523239]]>
               </value>
             </param>
             <param index="2">
@@ -332,11 +398,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBlankMandatoryNameValidation -->
-        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:05 IST" name="cleanUpAfterMethod" finished-at="2026-10-13T17:02:07 IST" duration-ms="2078" status="PASS">
+        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:24 IST" name="cleanUpAfterMethod" finished-at="2026-10-21T12:13:26 IST" duration-ms="2084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpAfterMethod -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:07 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:07 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:26 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:26 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -347,15 +413,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testImportCustomersCSV()[pri:3, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:07 IST" name="testImportCustomersCSV" finished-at="2026-10-13T17:02:08 IST" duration-ms="807" status="PASS">
+        <test-method signature="testImportCustomersCSV()[pri:3, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:26 IST" name="testImportCustomersCSV" finished-at="2026-10-21T12:13:32 IST" duration-ms="5296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testImportCustomersCSV -->
-        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:08 IST" name="cleanUpAfterMethod" finished-at="2026-10-13T17:02:10 IST" duration-ms="2133" status="PASS">
+        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:32 IST" name="cleanUpAfterMethod" finished-at="2026-10-21T12:13:34 IST" duration-ms="2060" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpAfterMethod -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:10 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:10 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:34 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:34 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -366,15 +432,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testCustomerDeduplicationViaCSV()[pri:4, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:10 IST" name="testCustomerDeduplicationViaCSV" finished-at="2026-10-13T17:02:10 IST" duration-ms="711" status="PASS">
+        <test-method signature="testCustomerDeduplicationViaCSV()[pri:4, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:34 IST" name="testCustomerDeduplicationViaCSV" finished-at="2026-10-21T12:13:34 IST" duration-ms="514" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCustomerDeduplicationViaCSV -->
-        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:10 IST" name="cleanUpAfterMethod" finished-at="2026-10-13T17:02:13 IST" duration-ms="2160" status="PASS">
+        <test-method is-config="true" signature="cleanUpAfterMethod()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:34 IST" name="cleanUpAfterMethod" finished-at="2026-10-21T12:13:36 IST" duration-ms="2085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUpAfterMethod -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:13 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:13 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:36 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:36 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -385,17 +451,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-13T17:02:13 IST" name="tearDown" finished-at="2026-10-13T17:02:13 IST" duration-ms="216" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.CreateCustomerTest@6cb107fd]" started-at="2026-10-21T12:13:36 IST" name="tearDown" finished-at="2026-10-21T12:13:37 IST" duration-ms="210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.supporthub.test.CreateCustomerTest -->
       <class name="com.supporthub.test.PerformanceTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:26 IST" name="setup" finished-at="2026-10-13T17:02:34 IST" duration-ms="8533" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:13:51 IST" name="setup" finished-at="2026-10-21T12:13:58 IST" duration-ms="7468" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testSearchAgentInPerformanceGrid(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:34 IST" name="testSearchAgentInPerformanceGrid" data-provider="agentSearchData" finished-at="2026-10-13T17:02:36 IST" duration-ms="2118" status="PASS">
+        <test-method signature="testSearchAgentInPerformanceGrid(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:13:58 IST" name="testSearchAgentInPerformanceGrid" data-provider="agentSearchData" finished-at="2026-10-21T12:14:00 IST" duration-ms="1639" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -411,7 +477,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchAgentInPerformanceGrid -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:36 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:36 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:14:00 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:14:00 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -422,7 +488,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testSearchNonExistingAgentInPerformanceGrid(java.lang.String)[pri:2, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:36 IST" name="testSearchNonExistingAgentInPerformanceGrid" data-provider="invalidAgentSearchData" finished-at="2026-10-13T17:02:38 IST" duration-ms="1111" status="PASS">
+        <test-method signature="testSearchNonExistingAgentInPerformanceGrid(java.lang.String)[pri:2, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:14:00 IST" name="testSearchNonExistingAgentInPerformanceGrid" data-provider="invalidAgentSearchData" finished-at="2026-10-21T12:14:01 IST" duration-ms="932" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -433,7 +499,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchNonExistingAgentInPerformanceGrid -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:38 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:38 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:14:01 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:14:01 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -444,7 +510,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testExportExcelReportGeneration(java.lang.String,java.lang.String)[pri:3, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:38 IST" name="testExportExcelReportGeneration" data-provider="exportExcelData" finished-at="2026-10-13T17:02:40 IST" duration-ms="2123" status="PASS">
+        <test-method signature="testExportExcelReportGeneration(java.lang.String,java.lang.String)[pri:3, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:14:01 IST" name="testExportExcelReportGeneration" data-provider="exportExcelData" finished-at="2026-10-21T12:14:03 IST" duration-ms="1999" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -460,7 +526,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExportExcelReportGeneration -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:40 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:02:40 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:14:03 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:14:03 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -471,17 +537,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-13T17:02:40 IST" name="tearDown" finished-at="2026-10-13T17:02:40 IST" duration-ms="292" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.PerformanceTest@338fc1d8]" started-at="2026-10-21T12:14:03 IST" name="tearDown" finished-at="2026-10-21T12:14:03 IST" duration-ms="280" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.supporthub.test.PerformanceTest -->
       <class name="com.supporthub.test.ApplyFilterTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:09 IST" name="setup" finished-at="2026-10-13T17:01:17 IST" duration-ms="7848" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:32 IST" name="setup" finished-at="2026-10-21T12:12:40 IST" duration-ms="7492" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testApplyQuickFilterAndToggleClose(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:17 IST" name="testApplyQuickFilterAndToggleClose" data-provider="quickFilterData" finished-at="2026-10-13T17:01:19 IST" duration-ms="1989" status="PASS">
+        <test-method signature="testApplyQuickFilterAndToggleClose(java.lang.String,java.lang.String)[pri:1, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:40 IST" name="testApplyQuickFilterAndToggleClose" data-provider="quickFilterData" finished-at="2026-10-21T12:12:42 IST" duration-ms="2006" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -497,7 +563,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testApplyQuickFilterAndToggleClose -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:19 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:19 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:42 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:42 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -508,7 +574,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testCreateAndSaveCustomFilterViewShortcut(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:19 IST" name="testCreateAndSaveCustomFilterViewShortcut" data-provider="customViewFilterData" finished-at="2026-10-13T17:01:27 IST" duration-ms="7900" status="PASS">
+        <test-method signature="testCreateAndSaveCustomFilterViewShortcut(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:42 IST" name="testCreateAndSaveCustomFilterViewShortcut" data-provider="customViewFilterData" finished-at="2026-10-21T12:12:50 IST" duration-ms="8034" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -522,14 +588,14 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Urgent]]>
+                <![CDATA[High]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateAndSaveCustomFilterViewShortcut -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:27 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:27 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:50 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:50 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -540,7 +606,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testSearchWithNonMatchingFilterCriteria(java.lang.String)[pri:3, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:27 IST" name="testSearchWithNonMatchingFilterCriteria" data-provider="nonMatchingFilterData" finished-at="2026-10-13T17:01:29 IST" duration-ms="1417" status="PASS">
+        <test-method signature="testSearchWithNonMatchingFilterCriteria(java.lang.String)[pri:3, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:50 IST" name="testSearchWithNonMatchingFilterCriteria" data-provider="nonMatchingFilterData" finished-at="2026-10-21T12:12:51 IST" duration-ms="1292" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -551,7 +617,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchWithNonMatchingFilterCriteria -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:29 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:29 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:51 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:51 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -562,70 +628,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testSearchTicketById(java.lang.String)[pri:4, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:29 IST" name="testSearchTicketById" data-provider="searchTicketData" finished-at="2026-10-13T17:01:39 IST" duration-ms="10650" status="FAIL">
+        <test-method signature="testSearchTicketById(java.lang.String)[pri:4, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:51 IST" name="testSearchTicketById" data-provider="searchTicketData" finished-at="2026-10-21T12:12:54 IST" duration-ms="3106" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TKT-261012-231453]]>
+                <![CDATA[TKT-261018-274737]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Assertion Failed: Ticket TKT-261012-231453 is not displayed in the filtered list! expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Assertion Failed: Ticket TKT-261012-231453 is not displayed in the filtered list! expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertTrue(Assert.java:57)
-at com.supporthub.test.ApplyFilterTest.testSearchTicketById(ApplyFilterTest.java:76)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchTicketById -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:40 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:40 IST" duration-ms="148" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:54 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:12:54 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testSearchTicketById status=FAILURE method=ApplyFilterTest.testSearchTicketById(java.lang.String)[pri:4, instance:com.supporthub.test.ApplyFilterTest@5b799640] output={null}]]]>
+                <![CDATA[[TestResult name=testSearchTicketById status=SUCCESS method=ApplyFilterTest.testSearchTicketById(java.lang.String)[pri:4, instance:com.supporthub.test.ApplyFilterTest@5b799640] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method signature="testCreateAndSaveGlobalFilterViewShortcut(java.lang.String,java.lang.String,java.lang.String)[pri:5, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:40 IST" name="testCreateAndSaveGlobalFilterViewShortcut" data-provider="globalViewFilterData" finished-at="2026-10-13T17:01:43 IST" duration-ms="3299" status="PASS">
+        <test-method signature="testCreateAndSaveGlobalFilterViewShortcut(java.lang.String,java.lang.String,java.lang.String)[pri:5, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:12:54 IST" name="testCreateAndSaveGlobalFilterViewShortcut" data-provider="globalViewFilterData" finished-at="2026-10-21T12:13:01 IST" duration-ms="6593" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -646,7 +671,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateAndSaveGlobalFilterViewShortcut -->
-        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:43 IST" name="captureScreenshotOnFailure" finished-at="2026-10-13T17:01:43 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="captureScreenshotOnFailure(org.testng.ITestResult)[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:13:01 IST" name="captureScreenshotOnFailure" finished-at="2026-10-21T12:13:01 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -657,7 +682,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureScreenshotOnFailure -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-13T17:01:43 IST" name="tearDown" finished-at="2026-10-13T17:01:43 IST" duration-ms="223" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.supporthub.test.ApplyFilterTest@5b799640]" started-at="2026-10-21T12:13:01 IST" name="tearDown" finished-at="2026-10-21T12:13:01 IST" duration-ms="213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

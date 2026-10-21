@@ -1,2 +1,0 @@
-Test execution failed due to:
-Assertion Failed: Ticket TKT-261012-231453 is not displayed in the filtered list! expected [true] but found [false]

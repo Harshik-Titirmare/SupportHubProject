@@ -1,6 +1,8 @@
 package com.supporthub.pages;
 
 import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -55,6 +57,10 @@ public class ReminderPage {
 		wait.until(ExpectedConditions.elementToBeClickable(reminderBtn)).click();
 	}
 
+	public void reminderDataFill(ReminderPage page, String note, String date, String time) {
+		page.fillReminderDetails(note, date, time);
+	}
+
 	public void fillReminderDetails(String note, String date, String time) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -95,6 +101,42 @@ public class ReminderPage {
 			WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(reminderToastMsg));
 			return toast.isDisplayed();
 		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	// 1. Left sidebar par 'Reminders' tab/icon par click karne ke liye
+	public void navigateToRemindersPage() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement remindersTab = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+				"//aside//a[@href='/reminders'] | //div[contains(@class, 'sidebar')]//a[@href='/reminders'] | //a[contains(@href, 'reminders')]")));
+		remindersTab.click();
+	}
+
+	// 2. Reminders list mein Ticket ID aur Note dono ko verify karne ke liye
+	public boolean verifyReminderInList(String expectedTicketId, String expectedNote) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			// Wait for reminders list items to load
+			wait.until(ExpectedConditions
+					.presenceOfElementLocated(By.xpath("//div[contains(@class, 'rounded') and descendant::p]")));
+
+			List<WebElement> reminderCards = driver
+					.findElements(By.xpath("//div[contains(@class, 'rounded') and descendant::p]"));
+
+			for (WebElement card : reminderCards) {
+				String cardText = card.getText();
+				// Check if both the expected Note and Ticket ID exist within the same reminder
+				// card
+				if (cardText.contains(expectedNote) && cardText.contains(expectedTicketId)) {
+					System.out.println("Reminder matched successfully for Ticket: " + expectedTicketId + " and Note: "
+							+ expectedNote);
+					return true;
+				}
+			}
+			return false;
+		} catch (Exception e) {
+			System.out.println("Exception in verifyReminderInList: " + e.getMessage());
 			return false;
 		}
 	}

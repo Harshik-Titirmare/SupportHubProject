@@ -1,1 +1,0 @@
-{"uuid":"43c52184-a05b-4381-ac3a-6db62afbeaaf","name":"testCreateAndSaveGlobalFilterViewShortcut","children":["1a486aef-647a-4985-8408-62f84b8c2d3f"],"befores":[{"name":"getGlobalViewFilterData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1791891100343,"stop":1791891100344}],"afters":[],"start":1791891100343,"stop":1791891160504}

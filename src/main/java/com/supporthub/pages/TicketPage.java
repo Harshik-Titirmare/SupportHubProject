@@ -19,13 +19,21 @@ public class TicketPage {
 	private By newTicketBtn = By.xpath("//*[@id='root']/div[2]/div[1]/div[2]/main/div/div[2]/div[2]/div/button[3]");
 	private By searchBox = By.xpath("//input[contains(@placeholder,'Search subject')]");
 
+	// Post-Creation Verification Locators
+	private By activeHeaderTicketID = By.xpath("//div[contains(@class,'font-mono') or contains(text(),'TKT-')]");
+
+	// Locator for Customer Name in the right-side Customer Info panel (where arrow
+	// points)
+	private By customerNameHeaderLocator = By.xpath("");
+
 	// Filter Icon Button & Dropdowns
 	private By filterIcon = By.xpath("//*[@id='root']/div[2]/div[1]/div[2]/main/div/div[2]/div[2]/div/button[1]");
 	private By statusDropdownBtn = By.xpath(
 			"//div[text()='STATUS']/parent::div//button | (//div[contains(@class,'USER FILTER') or text()='USER FILTER']/following::button)[2] | //*[contains(text(),'exclude_closed') or contains(text(),'Selected')]/ancestor::button");
 	private By priorityDropdownBtn = By.xpath(
 			"//div[text()='PRIORITY']/parent::div//button | (//div[contains(@class,'USER FILTER') or text()='USER FILTER']/following::button)[3] | //*[contains(text(),'Any Priority') or contains(text(),'Urgent')]/ancestor::button");
-
+	// Locator for Reset View / Reset Filter button
+	private By resetFilterBtn = By.xpath("//button[contains(text(),'Reset View') or contains(text(),'Reset')]");
 	// Search input fields inside popovers
 	private By searchStatusInput = By.xpath("//input[contains(@placeholder,'Search status')]");
 	private By searchPriorityInput = By.xpath("//input[contains(@placeholder,'Search priority')]");
@@ -33,8 +41,9 @@ public class TicketPage {
 	// Save View Locators
 	private By saveAsNewBtn = By.xpath(
 			"//*[contains(text(),'Save As New') or contains(text(),'Save as new') or contains(text(),'Save View')]");
-	private By viewNameInput = By.xpath(
-			"//input[contains(@placeholder,'View name') or contains(@placeholder,'Name') or contains(@placeholder,'Enter view name')] | //div[contains(@class,'popover')]//input");
+	// Strictly target the 'View name...' input field to avoid matching dropdown
+	// search boxes
+	private By viewNameInput = By.xpath("//input[@placeholder='View name...' or @placeholder='View name…']");
 	private By saveCheckmarkBtn = By
 			.xpath("//*[@id=\"root\"]/div[2]/div[1]/div[2]/main/div/div[2]/div[2]/div[2]/div/div[10]/div[1]/button");
 	private By pinSidebarBtn = By.xpath(
@@ -54,6 +63,29 @@ public class TicketPage {
 	private By interactionNotesInput = By.xpath("//textarea[contains(@placeholder,'Describe what happened')]");
 	private By logInteractionSubmitBtn = By.xpath("//button[contains(text(),'Log Interaction')]");
 	private By interactionToastMsg = By.xpath("//*[contains(text(),'Interaction logged')]");
+	// Locators for Closed tab, Search box, and searched ticket ID
+	private By closedTabLocator = By.xpath("//span[normalize-space()='Closed']");
+	private By searchBoxLocator = By.xpath("//input[contains(@placeholder, 'Search subject, TKT#')]");
+
+	// Locator for the header status badge (e.g., OPEN, CLOSED)
+	// Updated header status locator using your provided XPath
+	private By headerStatusLocator = By
+			.xpath("//body/div[@id='root']/div/div/div/main/div/div/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]");
+
+	// Locator for the header priority badge (e.g., URGENT, MEDIUM, LOW, HIGH)
+	private By headerPriorityLocator = By
+			.xpath("//body/div[@id='root']/div/div/div/main/div/div/div/div/div/div/div/button[2]");
+
+	// Locator definition at the top of the class
+	private By ticketsTab = By.xpath(
+			"//aside//a[@href='/tickets'] | //div[contains(@class, 'sidebar')]//a[@href='/tickets'] | //a[contains(@href, '/tickets')]");
+
+	// Method to navigate to Tickets tab using the defined locator
+	public void navigateToTickets() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement tab = wait.until(ExpectedConditions.elementToBeClickable(ticketsTab));
+		tab.click();
+	}
 
 	// ==================== CONSTRUCTOR ====================
 	public TicketPage(WebDriver driver, ActionDriver action) {
@@ -72,6 +104,42 @@ public class TicketPage {
 
 	public void toggleFilterOverlay() {
 		action.click(filterIcon);
+	}
+
+	// Get active header ticket ID after creation
+	public String getActiveTicketIDFromHeader() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(activeHeaderTicketID)).getText().trim();
+	}
+
+	public String getCustomerNameFromPanel() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement customerElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(customerNameHeaderLocator));
+			return customerElement.getText().trim();
+		} catch (Exception e) {
+			System.out.println("Exception in getCustomerNameFromPanel: " + e.getMessage());
+			return "";
+		}
+	}
+
+	// Dynamic method to verify customer name in the panel
+	public boolean isCustomerNameMatching(String expectedCustomerName) {
+		try {
+			// Dynamic XPath using the passed customer name parameter
+			String dynamicXPath = "//p[contains(text(), '" + expectedCustomerName + "')]";
+
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement customerElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dynamicXPath)));
+
+			String actualName = customerElement.getText().trim();
+			return actualName.equalsIgnoreCase(expectedCustomerName);
+		} catch (Exception e) {
+			System.out.println("Exception in isCustomerNameMatching: " + e.getMessage());
+			return false;
+		}
 	}
 
 	public void selectFilterStatus(String statusName) {
@@ -103,6 +171,31 @@ public class TicketPage {
 		searchInput.sendKeys(Keys.ENTER);
 
 		dropdown.click();
+	}
+
+	// Get status from header view
+	public String getActiveTicketStatusFromHeader() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement statusElement = wait.until(ExpectedConditions.visibilityOfElementLocated(headerStatusLocator));
+			return statusElement.getText().trim();
+		} catch (Exception e) {
+			System.out.println("Exception in getActiveTicketStatusFromHeader: " + e.getMessage());
+			return "";
+		}
+	}
+
+	// Get priority from header view
+	public String getActiveTicketPriorityFromHeader() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement priorityElement = wait
+					.until(ExpectedConditions.visibilityOfElementLocated(headerPriorityLocator));
+			return priorityElement.getText().trim();
+		} catch (Exception e) {
+			System.out.println("Exception in getActiveTicketPriorityFromHeader: " + e.getMessage());
+			return "";
+		}
 	}
 
 	public void saveCustomFilterView(String viewName) {
@@ -152,6 +245,25 @@ public class TicketPage {
 		customView.click();
 	}
 
+	/// Method to click on the global view shortcut under GLOBAL VIEWS dynamically
+	/// based on name
+	public void clickGlobalViewShortcut(String globalViewName) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		// Dynamic XPath using the globalViewName parameter to target the text span
+		// inside global views section
+		By globalViewLocator = By
+				.xpath("//div[contains(text(),'GLOBAL VIEWS')]/following-sibling::*//span[normalize-space()='"
+						+ globalViewName + "'] | //span[normalize-space()='" + globalViewName + "']");
+
+		WebElement viewElement = wait.until(ExpectedConditions.elementToBeClickable(globalViewLocator));
+		try {
+			viewElement.click();
+		} catch (Exception e) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", viewElement);
+		}
+	}
+
 	public boolean verifyNoTicketsFoundMessage() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -160,6 +272,25 @@ public class TicketPage {
 			return element.isDisplayed();
 		} catch (Exception e) {
 			return false;
+		}
+	}
+
+	public void resetFilters() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			WebElement resetBtn = wait.until(ExpectedConditions.elementToBeClickable(resetFilterBtn));
+			resetBtn.click();
+		} catch (Exception e) {
+			// Fallback: If reset button is inside overlay, toggle overlay first and then
+			// reset
+			try {
+				toggleFilterOverlay();
+				WebElement resetBtn = driver.findElement(resetFilterBtn);
+				resetBtn.click();
+				toggleFilterOverlay();
+			} catch (Exception ex) {
+				System.out.println("Could not reset filters automatically: " + ex.getMessage());
+			}
 		}
 	}
 
@@ -178,6 +309,18 @@ public class TicketPage {
 			return ticketElement.isDisplayed();
 		} catch (Exception e) {
 			return false;
+		}
+	}
+
+	public void clearSearchBox() {
+		try {
+			// Option A: Navigate back to clean tickets URL where no search query exists
+			driver.get("https://demo.wevyn.ai/tickets");
+
+			// Short wait for the page to load fresh
+			Thread.sleep(1500);
+		} catch (Exception e) {
+			System.out.println("Could not clear search via URL: " + e.getMessage());
 		}
 	}
 
@@ -223,14 +366,12 @@ public class TicketPage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		// Combined XPath using OR (|) operator for instant checking without loop delay
-		By combinedLocator = By
-				.xpath("(//div[contains(@class,'cursor-pointer') and descendant::span[contains(text(),'TKT-')]])[1] | "
-						+ "(//div[contains(@class,'cursor-pointer')])[1] | "
-						+ "(//div[starts-with(@class,'flex') and descendant::span[contains(text(),'TKT-')]])[1]");
+		// Updated robust locator targeting the ticket card using role='button' and TKT-
+		// text
+		By ticketLocator = By.xpath("(//div[@role='button' and descendant::span[contains(text(),'TKT-')]])[1]");
 
 		try {
-			WebElement firstTicket = wait.until(ExpectedConditions.elementToBeClickable(combinedLocator));
+			WebElement firstTicket = wait.until(ExpectedConditions.elementToBeClickable(ticketLocator));
 			try {
 				firstTicket.click();
 			} catch (Exception e) {
@@ -355,6 +496,66 @@ public class TicketPage {
 			WebElement toast = wait.until(ExpectedConditions.visibilityOfElementLocated(interactionToastMsg));
 			return toast.isDisplayed();
 		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public void clickClosedTab() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement closedTab = wait.until(ExpectedConditions.elementToBeClickable(closedTabLocator));
+
+			// Scroll into view and click using JS executor to avoid interception
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", closedTab);
+			js.executeScript("arguments[0].click();", closedTab);
+
+			// Small pause to let the Closed view load completely
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			System.out.println("Exception in clickClosedTab: " + e.getMessage());
+		}
+	}
+
+	// 2. Type/Search the copied Ticket ID in the search box
+	public void searchTicketByID(String ticketId) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(searchBoxLocator));
+		searchBox.clear();
+		searchBox.sendKeys(ticketId);
+
+		// Optional: 1-second pause or small wait for search results to filter out
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+		}
+	}
+
+	// 3. Verify that the ticket appears in the filtered list and matches the ID
+	public boolean verifySearchedTicketID(String expectedTicketId) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement ticketElement = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath("//*[contains(text(), '" + expectedTicketId + "')]")));
+			String foundText = ticketElement.getText().trim();
+			return foundText.contains(expectedTicketId);
+		} catch (Exception e) {
+			System.out.println("Exception in verifySearchedTicketID: " + e.getMessage());
+			return false;
+		}
+	}
+
+	// 4. Verify that the ticket status in the list is strictly 'CLOSED'
+	public boolean isTicketStatusClosedInList() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement statusElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath("//div[contains(text(),'CLOSED') or contains(text(),'Closed')]")));
+
+			String statusText = statusElement.getText().trim();
+			return statusText.equalsIgnoreCase("CLOSED");
+		} catch (Exception e) {
+			System.out.println("Exception in verifying closed status: " + e.getMessage());
 			return false;
 		}
 	}

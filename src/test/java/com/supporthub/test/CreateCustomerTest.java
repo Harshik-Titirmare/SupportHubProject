@@ -1,5 +1,7 @@
 package com.supporthub.test;
 
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -9,7 +11,8 @@ import com.supporthub.dataprovider.CustomerDataProvider;
 
 public class CreateCustomerTest extends BaseClass {
 
-	// CLEANUP FIX: Refreshes page after EVERY test method to ensure 100% clean DOM state
+	// CLEANUP FIX: Refreshes page after EVERY test method to ensure 100% clean DOM
+	// state
 	@AfterMethod(alwaysRun = true)
 	public void cleanUpAfterMethod() {
 		try {
@@ -47,6 +50,16 @@ public class CreateCustomerTest extends BaseClass {
 		boolean isCustomerVisible = customerPage.verifyCustomerCreated(name);
 		Assert.assertTrue(isCustomerVisible,
 				"Assertion Failed: New customer record for " + name + " is not visible in the profile list!");
+
+		// === NEW VERIFICATION 3: Search by Phone, Check Single Result & Validate Name
+		// ===
+		customerPage.searchCustomerByPhone(phone);
+
+		boolean isValidSingleResult = customerPage.verifySingleCustomerAndName(name);
+		Assert.assertTrue(isValidSingleResult,
+				"Assertion Failed: Either multiple customers appeared, or the searched phone '" + phone
+						+ "' does not match expected name '" + name + "'!");
+
 	}
 
 	@Test(priority = 2, dataProvider = "blankNameCustomerData", dataProviderClass = CustomerDataProvider.class)
@@ -69,7 +82,7 @@ public class CreateCustomerTest extends BaseClass {
 				"Assertion Failed: 'Create Customer' button is enabled even when Name field is blank!");
 	}
 
-	/*@Test(priority = 3)
+	@Test(priority = 3)
 	public void testImportCustomersCSV() {
 		CustomerPage customerPage = new CustomerPage(getDriver(), getActionDriver());
 
@@ -80,7 +93,7 @@ public class CreateCustomerTest extends BaseClass {
 		customerPage.clickImportButton();
 
 		// Step 3: Upload CSV file
-		String filePath = "/home/altius/Documents/CustomerFile.csv";
+		String filePath = System.getProperty("user.dir") + "/src/test/resources/testdata/CustomerFile.csv";
 		customerPage.uploadCSVFile(filePath);
 
 		// Step 4: Click Modal Import button
@@ -89,6 +102,25 @@ public class CreateCustomerTest extends BaseClass {
 		// Verification: Check success toast message ("Import complete")
 		boolean isImportSuccessful = customerPage.verifyImportSuccessToast();
 		Assert.assertTrue(isImportSuccessful, "Assertion Failed: CSV import success toast message is not displayed!");
+
+		// Verification 2: Read ALL customers from CSV and verify each one in a loop
+		List<String[]> allCustomers = customerPage.getAllCustomersFromCSV(filePath);
+
+		System.out.println("Total customers found in CSV for verification: " + allCustomers.size());
+
+		for (String[] customer : allCustomers) {
+			String csvName = customer[0];
+			String csvPhone = customer[1];
+
+			System.out.println("Verifying imported customer -> Name: " + csvName + ", Phone: " + csvPhone);
+
+			// Search by phone and verify unique record match
+			customerPage.searchCustomerByPhone(csvPhone);
+			boolean isCustomerVerified = customerPage.verifySingleCustomerAndName(csvName);
+
+			Assert.assertTrue(isCustomerVerified, "Assertion Failed: Imported customer '" + csvName + "' with phone '"
+					+ csvPhone + "' is missing or not unique!");
+		}
 	}
 
 	@Test(priority = 4)
@@ -102,7 +134,7 @@ public class CreateCustomerTest extends BaseClass {
 		customerPage.clickImportButton();
 
 		// Step 3: Upload CSV file containing pre-existing Email/Phone
-		String filePath = "/home/altius/Documents/CustomerFile.csv";
+		String filePath = System.getProperty("user.dir") + "/src/test/resources/testdata/CustomerFile.csv";
 		customerPage.uploadCSVFile(filePath);
 
 		// Step 4: Click Modal Import button
@@ -112,5 +144,6 @@ public class CreateCustomerTest extends BaseClass {
 		boolean isUpdateSuccessful = customerPage.verifyCustomerUpdatedToastMessage();
 		Assert.assertTrue(isUpdateSuccessful,
 				"Assertion Failed: Customer deduplication/update toast message is not displayed!");
-	}*/
+
+	}
 }

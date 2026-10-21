@@ -66,7 +66,6 @@ public class BaseClass {
 		}
 	}
 
-	
 	@BeforeClass(alwaysRun = true)
 	public synchronized void setup() throws IOException {
 		try {
@@ -114,7 +113,7 @@ public class BaseClass {
 			options.addArguments("--disable-popup-blocking");
 
 			// Configure Chrome for headless execution
-			options.addArguments("--headless=new"); // Run Chrome in headless mode (without GUI)
+			options.addArguments("--headless=new");         // Run Chrome in headless mode (without GUI)
 			options.addArguments("--no-sandbox"); // necessary when running Chrome as the 'jenkins' service user
 			options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems in shared memory
 																// environments (prevents Chrome crashes)
@@ -137,7 +136,7 @@ public class BaseClass {
 		} else if (browser.equalsIgnoreCase("firefox")) {
 
 			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("-headless");
+//			options.addArguments("-headless");
 			options.addArguments("--width=1920");
 			options.addArguments("--height=1080");
 			driver.set(new FirefoxDriver(options)); // New instance of FirefoxDriver for the current thread
@@ -160,15 +159,6 @@ public class BaseClass {
 		int imlicitWait = Integer.parseInt(prop.getProperty("implicitWait"));
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(imlicitWait));
 
-		/*
-		 * - ==================== OLD CODE COMMENTED OUT ==================== //
-		 * Maximize - The Browser // getDriver().manage().window().maximize(); -
-		 * =================================================================
-		 */
-
-		// NEW COMMENT: Avoid maximize() in headless mode as viewport resolution is
-		// already set via window-size options argument
-
 		// Navigate to url
 		try {
 			getDriver().get(prop.getProperty("url"));
@@ -177,13 +167,6 @@ public class BaseClass {
 		}
 	}
 
-	/*
-	 * ==================== SINGLE-SESSION EXECUTION CHANGE ==================== OLD
-	 * CODE: @AfterMethod(alwaysRun = true) -> Quits driver after EVERY test method.
-	 * NEW CODE: @AfterClass(alwaysRun = true) -> Quits driver ONLY ONCE after all
-	 * test methods in the class complete.
-	 * ===========================================================================
-	 */
 	// Capture screenshot on test failure using @AfterMethod
 	@AfterMethod(alwaysRun = true)
 	public void captureScreenshotOnFailure(ITestResult result) {
@@ -208,41 +191,37 @@ public class BaseClass {
 
 	// Quit the browser session once all tests in the class are completed
 	@AfterClass(alwaysRun = true)
-		public synchronized void tearDown() {
-			try {
-				if (driver.get() != null) {
-					driver.get().quit();
-					System.out.println("WebDriver instance is closed.");
-				}
-			} catch (Exception e) {
-				System.out.println("Unable to quit the driver: " + e.getMessage());
-			} finally {
-				// Clean up thread-local instances to prevent memory leaks
-				driver.remove();
-				actionDriver.remove();
-				System.out.println("ActionDriver instance is closed.");
+	public synchronized void tearDown() {
+		try {
+			if (driver.get() != null) {
+				driver.get().quit();
+				System.out.println("WebDriver instance is closed.");
 			}
-		
-
-	// 2. Clear browser contexts normally safely
-	try
-
-	{
-		if (driver.get() != null) {
-			driver.get().quit();
-			System.out.println("WebDriver instance is close.");
+		} catch (Exception e) {
+			System.out.println("Unable to quit the driver: " + e.getMessage());
+		} finally {
+			// Clean up thread-local instances to prevent memory leaks
+			driver.remove();
+			actionDriver.remove();
+			System.out.println("ActionDriver instance is closed.");
 		}
-	}catch(
-	Exception e)
-	{
-		System.out.println("unable to quit the driver" + e.getMessage());
-	}finally
-	{
-		// Thread cleanups to prevent memory leaks or context overlaps
-		driver.remove();
-		actionDriver.remove();
-		System.out.println("ActionDriver instance is close.");
-	}
+
+		// 2. Clear browser contexts normally safely
+		try
+
+		{
+			if (driver.get() != null) {
+				driver.get().quit();
+				System.out.println("WebDriver instance is close.");
+			}
+		} catch (Exception e) {
+			System.out.println("unable to quit the driver" + e.getMessage());
+		} finally {
+			// Thread cleanups to prevent memory leaks or context overlaps
+			driver.remove();
+			actionDriver.remove();
+			System.out.println("ActionDriver instance is close.");
+		}
 	}
 
 	// Getter method for prop
@@ -265,13 +244,6 @@ public class BaseClass {
 		}
 		return actionDriver.get();
 	}
-
-	/*
-	 * - ==================== OLD CODE COMMENTED OUT ==================== // Driver
-	 * - setter Method // public void setDriver(ThreadLocal<WebDriver> driver) { //
-	 * - this.driver = driver; // } -
-	 * =================================================================
-	 */
 
 	// static wait for pause
 	public void staticWait(int seconds) {
