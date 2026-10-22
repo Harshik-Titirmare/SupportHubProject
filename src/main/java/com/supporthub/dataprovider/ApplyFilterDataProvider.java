@@ -21,7 +21,7 @@ public class ApplyFilterDataProvider {
 
 	@DataProvider(name = "searchTicketData")
 	public static Object[][] getSearchTicketData() {
-		return new Object[][] { { "TKT-261018-274737" } };
+		return new Object[][] { { "TKT-261012-231453" } };
 	}
 
 	@DataProvider(name = "globalViewFilterData")

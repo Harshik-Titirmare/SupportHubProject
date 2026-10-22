@@ -1,1 +1,0 @@
-{"uuid":"fcc6d3ac-722c-4c90-833e-9bf4531608a1","name":"testCreateAndSaveCustomFilterViewShortcut","children":["51d9907b-749b-47a3-91a8-19e9e91b62b0"],"befores":[{"name":"getCustomViewFilterData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1792655299245,"stop":1792655299245}],"afters":[],"start":1792655299245,"stop":1792655379837}

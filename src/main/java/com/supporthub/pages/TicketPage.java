@@ -39,8 +39,7 @@ public class TicketPage {
 	private By searchPriorityInput = By.xpath("//input[contains(@placeholder,'Search priority')]");
 
 	// Save View Locators
-	private By saveAsNewBtn = By.xpath(
-			"//*[contains(text(),'Save As New') or contains(text(),'Save as new') or contains(text(),'Save View')]");
+	private By saveAsNewBtn = By.xpath("//button[normalize-space()='Save As New']");
 	// Strictly target the 'View name...' input field to avoid matching dropdown
 	// search boxes
 	private By viewNameInput = By.xpath("//input[@placeholder='View name...' or @placeholder='View name…']");

@@ -1,0 +1,1 @@
+{"uuid":"fd89f375-ddbf-43ef-a2b3-ecc6fdaa0217","name":"testSearchTicketById","children":["2aa0145c-2428-4820-8c46-518fd56782ac"],"befores":[{"name":"getSearchTicketData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1792657220716,"stop":1792657220716}],"afters":[],"start":1792657220715,"stop":1792657229428}
