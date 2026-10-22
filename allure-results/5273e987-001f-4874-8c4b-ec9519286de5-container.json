@@ -1,0 +1,1 @@
+{"uuid":"5273e987-001f-4874-8c4b-ec9519286de5","name":"testBlankReminderNoteValidation","children":["1649af4b-fc57-4e42-9837-5c98898c1f17"],"befores":[{"name":"getBlankReminderData","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1792655365708,"stop":1792655365708}],"afters":[],"start":1792655365708,"stop":1792655379843}

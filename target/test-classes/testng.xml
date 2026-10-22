@@ -7,6 +7,7 @@
 
 	<test name="SupportHub Regression Suite">
 		<classes>
+			<class name="com.supporthub.test.LoginTest" />
 			<class name="com.supporthub.test.CreateTicketTest" />
 			<class name="com.supporthub.test.ApplyFilterTest" />
 			<class name="com.supporthub.test.CreateCustomerTest" />

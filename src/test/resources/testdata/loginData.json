@@ -1,20 +1,14 @@
-[
-  {
-    "scenario": "Valid Login Test",
-    "username": "Admin",
-    "password": "admin1234",
-    "expectedError": ""
+{
+  "demoWorkspace": {
+    "workspace": "demo",
+    "email": "harshiktitirmare@gmail.com",
+    "validPassword": "harshiktitirmare@gmail.com",
+    "invalidPassword": "WrongP@ss123"
   },
-  {
-    "scenario": "Invalid Password Test",
-    "username": "Admin",
-    "password": "admin1233",
-    "expectedError": "Invalid credentials"
-  },
-  {
-    "scenario": "Invalid Username Test",
-    "username": "WrongUser",
-    "password": "admin123",
-    "expectedError": "Invalid credentials"
+  "uatWorkspace": {
+    "workspace": "uat",
+    "email": "harshiktitirmare@gmail.com",
+    "validPassword": "harshiktitirmare@gmail.com",
+    "invalidPassword": "WrongP@ss123"
   }
-]
+}

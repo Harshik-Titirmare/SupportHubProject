@@ -3,18 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.supporthub.test.CreateTicketTest">
+      <class name="com.supporthub.test.LoginTest">
         <methods>
           <include name="tearDown"/>
           <include name="clearAllureResults"/>
-          <include name="testTicketCategorySelectionAndInteractionLogging" invocation-numbers="0"/>
-          <include name="testCreateTicketWithValidCustomer" invocation-numbers="0 1 2"/>
+          <include name="testValidUserLogin"/>
           <include name="setup"/>
-          <include name="testCreateTicketValidationOnMissingFields"/>
           <include name="captureScreenshotOnFailure"/>
           <include name="loadConfig"/>
         </methods>
-      </class> <!-- com.supporthub.test.CreateTicketTest -->
+      </class> <!-- com.supporthub.test.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

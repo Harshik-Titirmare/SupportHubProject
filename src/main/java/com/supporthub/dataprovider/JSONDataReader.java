@@ -1,35 +1,23 @@
 package com.supporthub.dataprovider;
 
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
 
-import org.testng.annotations.DataProvider;
-
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import io.qameta.allure.internal.shadowed.jackson.databind.JsonNode;
+import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 
 public class JSONDataReader {
 
-    @DataProvider(name = "getLoginData", parallel = true)
-    public Object[][] getLoginData() throws IOException {
+	private static final String JSON_FILE_PATH = "src/test/resources/testdata/loginData.json";
 
-        // Define path to the JSON file
-        String filePath = System.getProperty("user.dir") + "/src/test/resources/testdata/loginData.json";
-        JsonArray jsonArray = JsonParser.parseReader(new FileReader(filePath)).getAsJsonArray();
-
-        // Create simple 2D matrix array to hold the row data values
-        Object[][] data = new Object[jsonArray.size()][4];
-
-        // Extract values one by one from JSON keys and put them into simple index fields
-        for (int i = 0; i < jsonArray.size(); i++) {
-            JsonObject jsonObject = jsonArray.get(i).getAsJsonObject();
-
-            data[i][0] = jsonObject.get("scenario").getAsString();
-            data[i][1] = jsonObject.get("username").getAsString();
-            data[i][2] = jsonObject.get("password").getAsString();
-            data[i][3] = jsonObject.get("expectedError").getAsString();
-        }
-        return data;
-    }
+	public static String getData(String workspaceKey, String fieldName) {
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			JsonNode rootNode = objectMapper.readTree(new File(JSON_FILE_PATH));
+			return rootNode.path(workspaceKey).path(fieldName).asText();
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Failed to read loginData.json file: " + e.getMessage());
+		}
+	}
 }

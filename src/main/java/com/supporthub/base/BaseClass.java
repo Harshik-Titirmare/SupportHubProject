@@ -77,15 +77,23 @@ public class BaseClass {
 			actionDriver.set(new ActionDriver(driver.get()));
 
 			// ==================== AUTOMATIC SINGLE-SESSION LOGIN ====================
-			// Automatically perform login once per test class session after navigating to
-			// URL
-			System.out.println("Performing automated class-level login...");
-			com.supporthub.pages.LoginPage loginPage = new com.supporthub.pages.LoginPage(getDriver(),
-					getActionDriver());
-			String email = prop.getProperty("username");
-			String pass = prop.getProperty("password");
-			loginPage.login(email, pass);
-			staticWait(2); // Wait for dashboard to load completely
+			// Skip automatic login ONLY for LoginTest so it can test the complete login
+			// flow explicitly
+			if (!this.getClass().getSimpleName().equals("LoginTest")) {
+				System.out.println("Performing automated class-level login...");
+				com.supporthub.pages.LoginPage loginPage = new com.supporthub.pages.LoginPage(getDriver(),
+						getActionDriver());
+
+				// Note: If BaseClass directly logs in, it might need workspace entry too,
+				// but keeping your existing BaseClass logic:
+				String email = prop.getProperty("username");
+				String pass = prop.getProperty("password");
+				loginPage.login(email, pass);
+				staticWait(2); // Wait for dashboard to load completely
+			} else {
+				System.out.println(
+						"LoginTest detected: Skipping BaseClass auto-login to execute explicit login test flow.");
+			}
 			// =========================================================================
 
 		} catch (Exception e) {
@@ -113,7 +121,7 @@ public class BaseClass {
 			options.addArguments("--disable-popup-blocking");
 
 			// Configure Chrome for headless execution
-			options.addArguments("--headless=new");         // Run Chrome in headless mode (without GUI)
+//			options.addArguments("--headless=new");         // Run Chrome in headless mode (without GUI)
 			options.addArguments("--no-sandbox"); // necessary when running Chrome as the 'jenkins' service user
 			options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems in shared memory
 																// environments (prevents Chrome crashes)
